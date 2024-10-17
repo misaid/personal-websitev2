@@ -1,2 +1,2 @@
 # Personal-WebsiteV2
-Typescript and Next.JS personal website
+Typescript, Next.JS, and Deno personal website
