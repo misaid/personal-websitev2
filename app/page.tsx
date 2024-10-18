@@ -2,7 +2,7 @@
 import { Linkedin, Github, Mail } from "lucide-react";
 
 // Internal Imports
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 /**
@@ -16,7 +16,7 @@ export default function Home(): JSX.Element {
       <div className="flex-col space-y-5 mx-5">
         <Navbar />
         <div className="w-full"></div>
-        <div className="flex space-x-2 w-full p-4 shadow-md rounded-lg border">
+        <div className="inline-flex space-x-2 w-full p-4 shadow-md rounded-lg border">
           <div className="flex ">
             <Avatar>
               <AvatarImage src="https://media.licdn.com/dms/image/v2/D5635AQFojf8ezVE49Q/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1718348643162?e=1729832400&v=beta&t=4qX594zw4al9O_ud1G5g4hdVfla1CRXf-TTf9vRnzqs" />
@@ -27,7 +27,7 @@ export default function Home(): JSX.Element {
             <h2 className="font-semibold ">Mohamed Said</h2>
             <h2 className="text-sm">Student</h2>
           </div>
-          <div className=" flex w-full justify-end">
+          <div className=" flex w-full justify-end items-center">
             <div className="flex flex-row space-x-2">
               <Linkedin />
               <Github />
