@@ -1,9 +1,11 @@
 "use client";
 
+// External Imports
 import * as React from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 
+// Internal Imports
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -12,9 +14,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export default function ModeToggle() {
+/**
+ * The ModeToggle component is a component that toggles the theme of the application.
+ * @returns ModeToggle {JSX.Element} - A JSX element representing the ModeToggle component.
+ */
+export default function ModeToggle(): JSX.Element {
   const { setTheme } = useTheme();
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
