@@ -1,10 +1,12 @@
+"use client";
 // External Imports
 import { Linkedin, Github, Mail } from "lucide-react";
 
 // Internal Imports
+import { useTheme } from "next-themes";
 import Navbar from "../components/Navbar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-// import Uofa from "../components/Uofa";
+import Uofa from "../components/Uofa";
 
 /**
  * The Home component is a page that displays a user's profile.
@@ -14,6 +16,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 // keep space of 5 rem between items
 export default function Home(): JSX.Element {
+  const theme = useTheme().resolvedTheme;
   return (
     <div className="max-w-[740px] mx-auto mt-5 mb-[1000px]">
       <Navbar />
@@ -31,7 +34,7 @@ export default function Home(): JSX.Element {
             <div className="flex flex-row space-x-2 items-center">
               <h2 className="text-sm">Student@UofA</h2>
 
-              {/* <Uofa /> */}
+              <Uofa />
             </div>
             <h4 className="font-light text-sm">🇨🇦 📍 Edmonton, Alberta</h4>
           </div>

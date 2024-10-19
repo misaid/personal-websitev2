@@ -1,9 +1,24 @@
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
-export const Uofa():any => {
-  const lightColor = "#275d38"; // Color for light theme
-  const darkColor = "#fff"; // Color for dark theme
-  const theme = useTheme().resolvedTheme;
+/**
+ * Wait to mount the component until the theme is resolved.
+ * @returns Uofa {JSX.Element} - A JSX element representing the Uofa component.
+ */
+const Uofa = () => {
+  const lightColor = "#275d38";
+  const darkColor = "#fff";
+
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className="w-2.5 h-2.5 flex items-center">
