@@ -1,3 +1,4 @@
+"use client";
 // External Imports
 import React from "react";
 
@@ -11,11 +12,38 @@ import ModeToggle from "./ModeToggle";
  */
 export default function Navbar(): JSX.Element {
   return (
-    <div className="w-full flex space-x-4 p-4 justify-between items-center shadow-md rounded-lg border ">
+    <div className="fixed top-[7px] mx-5 z-50 max-w-[700px] w-full flex space-x-4 p-4 justify-between items-center shadow-md rounded-lg border backdrop-blur-lg">
       <div className="flex space-x-5 text-md">
-        <h2 className="hover:cursor-pointer">Home</h2>
-        <h2 className="hover:cursor-pointer">Projects</h2>
-        <h2 className="hover:cursor-pointer">Contact</h2>
+        <nav
+          className="hover:cursor-pointer"
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          }}
+        >
+          Home
+        </nav>
+        <nav
+          className="hover:cursor-pointer"
+          onClick={() => {
+            const homeSection = document.getElementById("projects");
+            if (homeSection) {
+              homeSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        >
+          Projects
+        </nav>
+        <nav
+          className="hover:cursor-pointer"
+          onClick={() => {
+            const homeSection = document.getElementById("contact");
+            if (homeSection) {
+              homeSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        >
+          Contact
+        </nav>
       </div>
       <ModeToggle />
     </div>
