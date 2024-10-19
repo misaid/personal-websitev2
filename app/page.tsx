@@ -17,9 +17,9 @@ import Languages from "../components/Languages";
 // keep space of 5 rem between items
 export default function Home(): JSX.Element {
   return (
-    <div className="max-w-[740px] mx-auto mt-5 mb-[1000px] justify-center">
+    <div className="max-w-[740px] mx-auto mt-5 justify-center">
       <Navbar />
-      <div className=" flex flex-col space-y-5 mx-5 mt-24  items-center justify-center ">
+      <div className=" flex flex-col space-y-5 mx-5 mt-24 items-center justify-center ">
         {/* User Profile */}
         <div className="items-center flex space-x-2 w-full p-4 shadow-md rounded-lg border">
           <div className="flex ">
@@ -96,6 +96,12 @@ export default function Home(): JSX.Element {
           </div>
           <div className="w-full p-4 h-64 rounded-lg border"></div>
         </div>
+      </div>
+      {/* Footer */}
+      <div className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 shadow-md rounded-lg border mt-5 mb-[300px] flex justify-center">
+        <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight ">
+          🚧 SITE UNDER CONSTRUCTION 🚧
+        </h3>
       </div>
     </div>
   );
