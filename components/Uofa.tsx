@@ -9,7 +9,7 @@ const Uofa = () => {
   const lightColor = "#275d38";
   const darkColor = "#fff";
 
-  const { theme } = useTheme();
+  const theme = useTheme().resolvedTheme;
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

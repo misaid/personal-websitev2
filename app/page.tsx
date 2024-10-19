@@ -30,13 +30,17 @@ export default function Home(): JSX.Element {
             </Avatar>
           </div>
           <div className="flex flex-col w-full">
-            <h2 className="font-semibold ">Mohamed Said</h2>
+            <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
+              Mohamed Said
+            </h2>
             <div className="flex flex-row space-x-2 items-center">
-              <h2 className="text-sm">Student@UofA</h2>
+              <h2 className="text-sm font-medium leading-none">Student@UofA</h2>
 
               <Uofa />
             </div>
-            <h4 className="font-light text-sm">🇨🇦 📍 Edmonton, Alberta</h4>
+            <h4 className="text-sm font-light leading-none">
+              🇨🇦 📍 Edmonton, Alberta
+            </h4>
           </div>
           <div className="flex w-full justify-end items-center">
             <div className="flex flex-row space-x-2">
@@ -64,13 +68,15 @@ export default function Home(): JSX.Element {
       </div>
       {/* Yap */}
       <div className="flex-col space-y-2 w-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border mt-5">
-        <h2 className="font-semibold text-3xl">Hello, My name is Mohamed 👋</h2>
-        <h3 className="text-wrap">
+        <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+          Hello, My name is Mohamed 👋
+        </h2>
+        <p className="leading-7 [&:not(:first-child)]:mt-6">
           lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           ultricies, nisl nec lacinia fermentum, felis odio ultricies nunc, a
           ultrices nisl justo sit amet odio. Donec ultricies, nisl nec lacinia
           fermentum, felis odio ultricies nunc, a ultrices nisl justo sit amet
-        </h3>
+        </p>
       </div>
     </div>
   );
