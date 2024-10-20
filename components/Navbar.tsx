@@ -12,7 +12,7 @@ import ModeToggle from "./ModeToggle";
  */
 export default function Navbar(): JSX.Element {
   return (
-    <div className="fixed top-[7px] mx-5 z-50 max-w-[700px] w-full flex space-x-4 p-4 justify-between items-center shadow-md rounded-lg border backdrop-blur-lg">
+    <div className="fixed top-[0px]  sm:top-[7px] mx-5 z-50 max-w-[700px] w-full flex space-x-4 p-4 justify-between items-center shadow-md sm:rounded-lg border backdrop-blur-lg">
       <div className="flex space-x-5 text-md">
         <nav
           className="hover:cursor-pointer"
