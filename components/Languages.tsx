@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
+import { Tilt } from "react-tilt";
 // languages
 import {
   FaPython,
@@ -148,12 +149,53 @@ const Boxes = ({
   icon: JSX.Element;
   name: string;
 }): JSX.Element => {
+  const defaultOptions = {
+    reverse: true,
+    max: 35,
+    perspective: 1000,
+    scale: 1.1,
+    speed: 3000,
+    transition: true,
+    axis: null,
+    reset: true,
+    easing: "cubic-bezier(.03,.98,.52,.99)",
+  };
+
+  const ref = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
+    const rect = ref.current?.getBoundingClientRect();
+    if (rect) {
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      setMousePosition({ x, y });
+    }
+  }
+
   return (
-    <div className="h-full w-full shadow-md rounded-lg border flex flex-col items-center justify-center p-4">
-      {icon}
-      <h4 className="mt-2 sm:mt-4 text-[8px] sm:text-sm font-medium leading-none">
-        {name}
-      </h4>
-    </div>
+    <Tilt options={defaultOptions} className="w-full h-full">
+      <div
+        ref={ref}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="relative h-full w-full shadow-md rounded-lg border flex flex-col items-center justify-center p-4"
+      >
+        <div
+          className="absolute inset-0 z-0 transition-opacity duration-300 ease-in-out rounded-lg"
+          style={{
+            background: `radial-gradient(circle 100px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.2), transparent 80%)`,
+            opacity: isHovered ? 1 : 0,
+            pointerEvents: "none",
+          }}
+        />
+        {icon}
+        <h4 className="mt-2 sm:mt-4 text-[8px] sm:text-sm font-medium leading-none">
+          {name}
+        </h4>
+      </div>
+    </Tilt>
   );
 };
