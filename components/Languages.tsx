@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 // languages
-import { FaPython, FaJava, FaJs } from "react-icons/fa";
+import {
+  FaPython,
+  FaJava,
+  // , FaJs
+} from "react-icons/fa";
 import { SiTypescript, SiCplusplus } from "react-icons/si";
 // frameworks
 import { SiDjango, SiReact, SiNodedotjs, SiExpress } from "react-icons/si";
