@@ -18,10 +18,8 @@ import Languages from "../components/Languages";
 export default function Home(): JSX.Element {
   return (
     <div>
-      <div className="w-full flex items-center justify-center mx-auto">
-        <Navbar />
-      </div>
       <div className="max-w-[740px] mx-auto mt-5 justify-center">
+        <Navbar />
         <div className="mb-[300px] flex flex-col space-y-5 mx-5 mt-24 items-center justify-center ">
           {/* User Profile */}
           <div className="items-center flex space-x-2 w-full p-4 shadow-md rounded-lg border">

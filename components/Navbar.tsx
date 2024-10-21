@@ -12,18 +12,18 @@ import ModeToggle from "./ModeToggle";
  */
 export default function Navbar(): JSX.Element {
   return (
-    <div className="fixed top-[0px]  sm:top-[7px] mx-5 z-50 max-w-[700px] w-full flex space-x-4 p-4 justify-between items-center shadow-md sm:rounded-lg border-b backdrop-blur-lg">
-      <div className="flex space-x-5 text-md">
-        <nav
-          className="hover:cursor-pointer"
+    <div className="fixed top-[0px] mx-5 z-50 max-w-[700px] w-full flex space-x-4 justify-between items-center py-4 backdrop-blur-lg">
+      <nav className="flex space-x-5 text-md">
+        <a
+          className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer"
           onClick={() => {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
           }}
         >
           Home
-        </nav>
-        <nav
-          className="hover:cursor-pointer"
+        </a>
+        <a
+          className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer"
           onClick={() => {
             const homeSection = document.getElementById("projects");
             if (homeSection) {
@@ -32,9 +32,9 @@ export default function Navbar(): JSX.Element {
           }}
         >
           Projects
-        </nav>
-        <nav
-          className="hover:cursor-pointer"
+        </a>
+        <a
+          className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer"
           onClick={() => {
             const homeSection = document.getElementById("contact");
             if (homeSection) {
@@ -43,8 +43,8 @@ export default function Navbar(): JSX.Element {
           }}
         >
           Contact
-        </nav>
-      </div>
+        </a>
+      </nav>
       <ModeToggle />
     </div>
   );
