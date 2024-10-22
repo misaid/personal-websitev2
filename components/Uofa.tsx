@@ -21,7 +21,7 @@ const Uofa = () => {
   }
 
   return (
-    <div className="w-2.5 h-2.5 flex items-center">
+    <div className="w-full h-full flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 274.63">
         <g id="icon" fill={theme === "dark" ? darkColor : lightColor}>
           <path d="m144 32.53-2.25-.91a47.82 47.82 0 0 0-17.52-3.1A48.41 48.41 0 0 0 108 31.17a48.41 48.41 0 0 0-16.18-2.65 47.82 47.82 0 0 0-17.52 3.1l-2.25.91v5h-5.63v39h83.16v-39H144Zm-39.6 34.84a53.5 53.5 0 0 0-25.16 0V37.5a46.35 46.35 0 0 1 25.16 0Zm32.36 0a53.5 53.5 0 0 0-25.16 0V37.5a46.35 46.35 0 0 1 25.16 0Z" />
