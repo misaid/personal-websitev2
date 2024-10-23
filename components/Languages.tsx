@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 // languages
 import {
   FaPython,
@@ -175,7 +175,7 @@ const Boxes = ({
   }
 
   return (
-    <Tilt options={defaultOptions} className="w-full h-full">
+    <Tilt scale={1.05} tiltReverse={true} className="w-full h-full">
       <div
         ref={ref}
         onMouseMove={handleMouseMove}
