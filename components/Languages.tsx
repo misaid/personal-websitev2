@@ -149,18 +149,6 @@ const Boxes = ({
   icon: JSX.Element;
   name: string;
 }): JSX.Element => {
-  const defaultOptions = {
-    reverse: true,
-    max: 35,
-    perspective: 1000,
-    scale: 1.05,
-    speed: 2000,
-    transition: true,
-    axis: null,
-    reset: true,
-    easing: "cubic-bezier(.03,.98,.52,.99)",
-  };
-
   const ref = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
