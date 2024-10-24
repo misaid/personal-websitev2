@@ -18,36 +18,93 @@ import { SiGit, SiDocker, SiLinux, SiNeovim } from "react-icons/si";
 interface Skill {
   icon: JSX.Element;
   name: string;
+  description: string;
 }
 
 export default function Languages(): JSX.Element {
   const [size, setSize] = useState(0);
   const [mounted, setMounted] = useState(false);
+
   const languages: Skill[] = [
-    { icon: <FaJava size={size} />, name: "Java" },
-    { icon: <FaPython size={size} />, name: "Python" },
-    // { icon: <FaJs size={size} />, name: "JavaScript" },
-    { icon: <SiTypescript size={size} />, name: "TypeScript" },
-    { icon: <SiCplusplus size={size} />, name: "C++" },
+    { icon: <FaJava size={size} />, name: "Java", description: "OOP Language" },
+    {
+      icon: <FaPython size={size} />,
+      name: "Python",
+      description: "Scripting",
+    },
+    {
+      icon: <SiTypescript size={size} />,
+      name: "TypeScript",
+      description: "Typed JS",
+    },
+    {
+      icon: <SiCplusplus size={size} />,
+      name: "C++",
+      description: "System Programming",
+    },
   ];
+
   const frameworks: Skill[] = [
-    { icon: <SiDjango size={size} />, name: "Django" },
-    { icon: <SiReact size={size} />, name: "React" },
-    { icon: <SiNodedotjs size={size} />, name: "Node.js" },
-    { icon: <SiExpress size={size} />, name: "Express" },
+    {
+      icon: <SiDjango size={size} />,
+      name: "Django",
+      description: "Web Framework",
+    },
+    { icon: <SiReact size={size} />, name: "React", description: "UI Library" },
+    {
+      icon: <SiNodedotjs size={size} />,
+      name: "Node.js",
+      description: "Server-side JS",
+    },
+    {
+      icon: <SiExpress size={size} />,
+      name: "Express",
+      description: "Web Framework",
+    },
   ];
+
   const databases: Skill[] = [
-    { icon: <SiPostgresql size={size} />, name: "PostgreSQL" },
-    { icon: <DiMysql size={size} />, name: "MySQL" },
-    { icon: <SiMongodb size={size} />, name: "MongoDB" },
-    { icon: <SiSqlite size={size} />, name: "SQLite" },
+    {
+      icon: <SiPostgresql size={size} />,
+      name: "PostgreSQL",
+      description: "SQL Database",
+    },
+    {
+      icon: <DiMysql size={size} />,
+      name: "MySQL",
+      description: "SQL Database",
+    },
+    {
+      icon: <SiMongodb size={size} />,
+      name: "MongoDB",
+      description: "NoSQL Database",
+    },
+    {
+      icon: <SiSqlite size={size} />,
+      name: "SQLite",
+      description: "Embedded DB",
+    },
   ];
+
   const tools: Skill[] = [
-    { icon: <SiGit size={size} />, name: "Git" },
-    { icon: <SiDocker size={size} />, name: "Docker" },
-    { icon: <SiLinux size={size} />, name: "Linux" },
-    { icon: <SiNeovim size={size} />, name: "Neovim" },
+    {
+      icon: <SiGit size={size} />,
+      name: "Git",
+      description: "Version Control",
+    },
+    {
+      icon: <SiDocker size={size} />,
+      name: "Docker",
+      description: "Containerization",
+    },
+    { icon: <SiLinux size={size} />, name: "Linux", description: "OS" },
+    {
+      icon: <SiNeovim size={size} />,
+      name: "Neovim",
+      description: "Text Editor",
+    },
   ];
+
   function handleResize(): void {
     const viewportWidth = window.innerWidth;
     if (viewportWidth > 1400) {
@@ -58,86 +115,50 @@ export default function Languages(): JSX.Element {
   }
 
   useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
     setMounted(true);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    if (mounted) {
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
-  }, [mounted]);
-
-  if (!mounted)
-    return (
-      <div className="w-full h-[1000px]">
-        <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-          Skills
-        </h2>
-      </div>
-    );
   return (
-    <div className="space-y-4">
-      <div>
-        <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-          Skills
-        </h2>
-      </div>
-      <div>
-        <h3 className="mb-2 scroll-m-20 text-2xl font-semibold tracking-tight">
-          Languages
-        </h3>
-        <div className="flex sm:space-x-4 space-x-2">
-          {languages.map((language) => (
-            <Boxes
-              key={language.name}
-              icon={language.icon}
-              name={language.name}
-            />
-          ))}
-        </div>
-      </div>
-      <div>
-        <h3 className="mb-2 scroll-m-20 text-2xl font-semibold tracking-tight">
-          Frameworks
-        </h3>
-        <div className="flex sm:space-x-4 space-x-2">
-          {frameworks.map((framework) => (
-            <Boxes
-              key={framework.name}
-              icon={framework.icon}
-              name={framework.name}
-            />
-          ))}
-        </div>
-      </div>
-      <div>
-        <h3 className="mb-2 scroll-m-20 text-2xl font-semibold tracking-tight">
-          Databases
-        </h3>
-        <div className="flex sm:space-x-4 space-x-1.5">
-          {databases.map((database) => (
-            <Boxes
-              key={database.name}
-              icon={database.icon}
-              name={database.name}
-            />
-          ))}
-        </div>
-      </div>
-      <div>
-        <h3 className="mb-2 scroll-m-20 text-2xl font-semibold tracking-tight">
-          Tools
-        </h3>
-        <div className="flex sm:space-x-4 space-x-2">
-          {tools.map((tool) => (
-            <Boxes key={tool.name} icon={tool.icon} name={tool.name} />
-          ))}
-        </div>
-      </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {mounted &&
+        languages.map((language, index) => (
+          <Boxes
+            key={index}
+            icon={language.icon}
+            name={language.name}
+            description={language.description}
+          />
+        ))}
+      {mounted &&
+        frameworks.map((framework, index) => (
+          <Boxes
+            key={index}
+            icon={framework.icon}
+            name={framework.name}
+            description={framework.description}
+          />
+        ))}
+      {mounted &&
+        databases.map((database, index) => (
+          <Boxes
+            key={index}
+            icon={database.icon}
+            name={database.name}
+            description={database.description}
+          />
+        ))}
+      {mounted &&
+        tools.map((tool, index) => (
+          <Boxes
+            key={index}
+            icon={tool.icon}
+            name={tool.name}
+            description={tool.description}
+          />
+        ))}
     </div>
   );
 }
@@ -145,9 +166,11 @@ export default function Languages(): JSX.Element {
 const Boxes = ({
   icon,
   name,
+  description,
 }: {
   icon: JSX.Element;
   name: string;
+  description: string;
 }): JSX.Element => {
   const ref = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -183,6 +206,7 @@ const Boxes = ({
         <h4 className="mt-2 sm:mt-4 text-[8px] sm:text-sm font-medium leading-none">
           {name}
         </h4>
+        <p className="text-sm text-muted-foreground">{description}</p>
       </div>
     </Tilt>
   );
