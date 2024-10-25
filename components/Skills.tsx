@@ -145,7 +145,8 @@ export default function Languages(): JSX.Element {
         </h2>
 
         <p className="text-l text-muted-foreground">
-          A curated selection of languages and technologies I've worked with.
+          A curated selection of languages and technologies I&apos;ve worked
+          with.
         </p>
       </div>
       <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-4">
