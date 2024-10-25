@@ -1,12 +1,13 @@
 "use client";
 // External Imports
 import { Linkedin, Github, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 // Internal Imports
-import Navbar from "../components/Navbar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Uofa from "../components/Uofa";
-import Languages from "../components/Languages";
+import Uofa from "@/components/Uofa";
+import Languages from "@/components/Skills";
+import Projects from "@/components/Projects";
 
 /**
  * The Home component is a page that displays a user's profile.
@@ -17,10 +18,9 @@ import Languages from "../components/Languages";
 // keep space of 5 rem between items
 export default function Home(): JSX.Element {
   return (
-    <div>
+    <div className="w-full h-full">
       <div className="max-w-[740px] mx-auto mt-5 justify-center">
-        <Navbar />
-        <div className="mb-[300px] flex flex-col space-y-5 mx-5 mt-24 items-center justify-center ">
+        <div className="flex flex-col space-y-5 mx-5 mt-24 items-center justify-center ">
           {/* User Profile */}
           <div className="items-center flex space-x-2 w-full p-4 shadow-md rounded-lg border">
             <div className="flex ">
@@ -133,7 +133,7 @@ export default function Home(): JSX.Element {
                   </li>
                   <li>
                     Implemented data structures like linked lists, stacks, and
-                    queues in C for blackjack game simulation
+                    queues in C
                   </li>
                   <li>
                     Collaborated on various team projects, emphasizing software
@@ -145,47 +145,26 @@ export default function Home(): JSX.Element {
           </div>
           {/* Projects */}
           <div className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 shadow-md rounded-lg border mt-5">
-            <div className="w-half p-4  rounded-lg border">
-              <h2 className="text-sm font-medium leading-none">Projects</h2>
+            <div className="w-full flex flex-row border-b pb-2 items-center">
+              <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0">
+                Projects
+              </h2>
+              <div className="w-full flex flex-row justify-end">
+                <a
+                  className="p-2 flex flex-row items-center space-x-1 text-base text-muted-foreground hover:cursor-pointer"
+                  href="/projects"
+                >
+                  <h3>See more</h3> <ArrowRight />
+                </a>
+              </div>
             </div>
-            <div className="w-full p-4 h-64 rounded-lg border"></div>
+            <Projects />
           </div>
           {/* notice */}
           <div className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 shadow-md rounded-lg border mt-5 flex justify-center">
             <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight ">
               🚧 SITE UNDER CONSTRUCTION 🚧
             </h3>
-          </div>
-          <div className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 rounded-lg mt-5 flex items-center">
-            <div className="w-full">
-              <h4 className="text-sm text-muted-foreground">
-                © 2024 mohamedsaid.ca |{" "}
-                <span className="font-semibold">privacy</span>
-              </h4>
-            </div>
-
-            <div className="flex w-full justify-end items-center">
-              <div className="flex flex-row space-x-2">
-                <a
-                  href="https://www.linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Linkedin />
-                </a>
-
-                <a
-                  href="https://www.github.com/misaid"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github />
-                </a>
-                <a href="mailto:mohamediasaid@outlook.ca">
-                  <Mail />
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
