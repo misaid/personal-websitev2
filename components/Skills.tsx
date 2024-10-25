@@ -8,12 +8,27 @@ import {
 } from "react-icons/fa";
 import { SiTypescript, SiCplusplus } from "react-icons/si";
 // frameworks
-import { SiDjango, SiReact, SiNodedotjs, SiExpress } from "react-icons/si";
+import {
+  // SiDjango,
+  SiReact,
+  // SiNodedotjs,
+  SiExpress,
+  SiNextdotjs,
+} from "react-icons/si";
 // databases
-import { SiSqlite, SiPostgresql, SiMongodb } from "react-icons/si";
-import { DiMysql } from "react-icons/di";
+import {
+  // SiSqlite,
+  SiPostgresql,
+  SiMongodb,
+} from "react-icons/si";
+// import { DiMysql } from "react-icons/di";
 // tools
-import { SiGit, SiDocker, SiLinux, SiNeovim } from "react-icons/si";
+import {
+  SiGit,
+  SiDocker,
+  // SiLinux,
+  SiNeovim,
+} from "react-icons/si";
 
 interface Skill {
   icon: JSX.Element;
@@ -25,12 +40,12 @@ export default function Languages(): JSX.Element {
   const [size, setSize] = useState(0);
   const [mounted, setMounted] = useState(false);
 
-  const languages: Skill[] = [
+  const skills: Skill[] = [
     { icon: <FaJava size={size} />, name: "Java", description: "OOP Language" },
     {
       icon: <FaPython size={size} />,
       name: "Python",
-      description: "Scripting",
+      description: "Language",
     },
     {
       icon: <SiTypescript size={size} />,
@@ -40,53 +55,53 @@ export default function Languages(): JSX.Element {
     {
       icon: <SiCplusplus size={size} />,
       name: "C++",
-      description: "System Programming",
+      description: "Language",
     },
-  ];
-
-  const frameworks: Skill[] = [
+    // {
+    //   icon: <SiDjango size={size} />,
+    //   name: "Django",
+    //   description: "Web Framework",
+    // },
     {
-      icon: <SiDjango size={size} />,
-      name: "Django",
-      description: "Web Framework",
+      icon: <SiReact size={size} />,
+      name: "React",
+      description: "JavaScript Framework",
     },
-    { icon: <SiReact size={size} />, name: "React", description: "UI Library" },
+    // {
+    //   icon: <SiNodedotjs size={size} />,
+    //   name: "Node.js",
+    //   description: "Server-side JS",
+    // },
     {
-      icon: <SiNodedotjs size={size} />,
-      name: "Node.js",
-      description: "Server-side JS",
+      icon: <SiNextdotjs size={size} />,
+      name: "Next.js",
+      description: "React Framework",
     },
     {
       icon: <SiExpress size={size} />,
       name: "Express",
       description: "Web Framework",
     },
-  ];
-
-  const databases: Skill[] = [
     {
       icon: <SiPostgresql size={size} />,
       name: "PostgreSQL",
       description: "SQL Database",
     },
-    {
-      icon: <DiMysql size={size} />,
-      name: "MySQL",
-      description: "SQL Database",
-    },
+    // {
+    //   icon: <DiMysql size={size} />,
+    //   name: "MySQL",
+    //   description: "SQL Database",
+    // },
     {
       icon: <SiMongodb size={size} />,
       name: "MongoDB",
       description: "NoSQL Database",
     },
-    {
-      icon: <SiSqlite size={size} />,
-      name: "SQLite",
-      description: "Embedded DB",
-    },
-  ];
-
-  const tools: Skill[] = [
+    // {
+    //   icon: <SiSqlite size={size} />,
+    //   name: "SQLite",
+    //   description: "Embedded DB",
+    // },
     {
       icon: <SiGit size={size} />,
       name: "Git",
@@ -97,7 +112,7 @@ export default function Languages(): JSX.Element {
       name: "Docker",
       description: "Containerization",
     },
-    { icon: <SiLinux size={size} />, name: "Linux", description: "OS" },
+    // { icon: <SiLinux size={size} />, name: "Linux", description: "OS" },
     {
       icon: <SiNeovim size={size} />,
       name: "Neovim",
@@ -122,47 +137,31 @@ export default function Languages(): JSX.Element {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {mounted &&
-        languages.map((language, index) => (
-          <Boxes
-            key={index}
-            icon={language.icon}
-            name={language.name}
-            description={language.description}
-          />
-        ))}
-      {mounted &&
-        frameworks.map((framework, index) => (
-          <Boxes
-            key={index}
-            icon={framework.icon}
-            name={framework.name}
-            description={framework.description}
-          />
-        ))}
-      {mounted &&
-        databases.map((database, index) => (
-          <Boxes
-            key={index}
-            icon={database.icon}
-            name={database.name}
-            description={database.description}
-          />
-        ))}
-      {mounted &&
-        tools.map((tool, index) => (
-          <Boxes
-            key={index}
-            icon={tool.icon}
-            name={tool.name}
-            description={tool.description}
-          />
-        ))}
+    <div className="flex flex-col justify-center space-y-3">
+      <div className="flex flex-col border-b pb-2">
+        <h2 className="scroll-m-20  text-3xl font-semibold tracking-tight first:mt-0">
+          {" "}
+          Skills{" "}
+        </h2>
+
+        <p className="text-l text-muted-foreground">
+          A curated selection of languages and technologies I've worked with.
+        </p>
+      </div>
+      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        {mounted &&
+          skills.map((skill, index) => (
+            <Boxes
+              key={index}
+              icon={skill.icon}
+              name={skill.name}
+              description={skill.description}
+            />
+          ))}
+      </div>
     </div>
   );
 }
-
 const Boxes = ({
   icon,
   name,
@@ -192,7 +191,7 @@ const Boxes = ({
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="relative h-full w-full shadow-md rounded-lg border flex flex-col items-center justify-center p-4"
+        className="relative h-full w-full shadow-md rounded-lg border flex flex-col items-center justify-center p-2 sm:p-4"
       >
         <div
           className="absolute inset-0 z-0 transition-opacity duration-300 ease-in-out rounded-lg"
@@ -203,10 +202,12 @@ const Boxes = ({
           }}
         />
         {icon}
-        <h4 className="mt-2 sm:mt-4 text-[8px] sm:text-sm font-medium leading-none">
+        <h4 className="mt-2 sm:mt-4 text-[9px] sm:text-sm font-medium leading-none">
           {name}
         </h4>
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <p className="hidden sm:block text-xs text-muted-foreground">
+          {description}
+        </p>
       </div>
     </Tilt>
   );
