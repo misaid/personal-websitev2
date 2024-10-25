@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { useRef, useState } from "react";
 import { Github, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 type Props = {
   image: string;
@@ -15,7 +17,7 @@ type Props = {
   live?: string;
 };
 
-export default function ({
+export default function ProjectCard({
   image,
   languages,
   name,
@@ -55,7 +57,15 @@ export default function ({
         />
         <div className="flex flex-col   space-y-8">
           <div className="flex flex-col space-y-2">
-            <img src={image} alt={name} className="rounded-lg" />
+            <AspectRatio ratio={16 / 9}>
+              <Image
+                src={image}
+                alt={name}
+                width={1920}
+                height={1080}
+                className="rounded-lg"
+              />
+            </AspectRatio>
             <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
               {name}
             </h2>
