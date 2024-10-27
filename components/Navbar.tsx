@@ -18,36 +18,40 @@ export default function Navbar(): JSX.Element {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="fixed top-[0px]  z-50 max-w-[740px] w-full flex space-x-4 justify-between items-center py-4 backdrop-blur-lg">
-        <nav className="flex space-x-5 text-md mx-5">
-          <Link
-            href="/"
-            className={`transition-colors hover:text-foreground/80 ${
-              pathname === "/" ? "text-foreground" : "text-foreground/60"
-            } hover:cursor-pointer`}
-          >
-            Home
-          </Link>
-          <Link
-            href="/projects"
-            className={`transition-colors hover:text-foreground/80 ${
-              pathname === "/projects"
-                ? "text-foreground"
-                : "text-foreground/60"
-            } hover:cursor-pointer`}
-          >
-            Projects
-          </Link>
-          <Link
-            href="/contact"
-            className={`transition-colors hover:text-foreground/80 ${
-              pathname === "/contact" ? "text-foreground" : "text-foreground/60"
-            } hover:cursor-pointer`}
-          >
-            Contact
-          </Link>
-        </nav>
-        <ModeToggle />
+      <div className="fixed top-[0px]  z-50 max-w-[740px] w-full flex py-4 backdrop-blur-lg">
+        <div className="w-full flex flex-row mx-5 justify-between items-center">
+          <nav className="flex space-x-5 text-md">
+            <Link
+              href="/"
+              className={`transition-colors hover:text-foreground/80 ${
+                pathname === "/" ? "text-foreground" : "text-foreground/60"
+              } hover:cursor-pointer`}
+            >
+              Home
+            </Link>
+            <Link
+              href="/projects"
+              className={`transition-colors hover:text-foreground/80 ${
+                pathname === "/projects"
+                  ? "text-foreground"
+                  : "text-foreground/60"
+              } hover:cursor-pointer`}
+            >
+              Projects
+            </Link>
+            <Link
+              href="/contact"
+              className={`transition-colors hover:text-foreground/80 ${
+                pathname === "/contact"
+                  ? "text-foreground"
+                  : "text-foreground/60"
+              } hover:cursor-pointer`}
+            >
+              Contact
+            </Link>
+          </nav>
+          <ModeToggle />
+        </div>
       </div>
     </div>
   );
