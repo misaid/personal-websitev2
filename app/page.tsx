@@ -49,7 +49,7 @@ export default function Home(): JSX.Element {
             <div className="flex w-full justify-end items-center">
               <div className="flex flex-row space-x-2">
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/in/misaid"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

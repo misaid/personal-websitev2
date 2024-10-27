@@ -18,8 +18,8 @@ export default function Navbar(): JSX.Element {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="fixed top-[0px] mx-5 z-50 max-w-[700px] w-full flex space-x-4 justify-between items-center py-4 backdrop-blur-lg">
-        <nav className="flex space-x-5 text-md">
+      <div className="fixed top-[0px]  z-50 max-w-[740px] w-full flex space-x-4 justify-between items-center py-4 backdrop-blur-lg">
+        <nav className="flex space-x-5 text-md mx-5">
           <Link
             href="/"
             className={`transition-colors hover:text-foreground/80 ${

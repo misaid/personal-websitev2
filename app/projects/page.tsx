@@ -29,7 +29,8 @@ export default function Projects() {
       live: "https://shop.msaid.dev/",
     },
     {
-      image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/yl.jpg",
+      image:
+        "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/snapshot_2024-10-26_22-29-47.png",
       languages: ["Java", "XML", "OneSignal", "Firebase"],
       name: "Holos",
       description:
@@ -37,7 +38,8 @@ export default function Projects() {
       source: "https://github.com/CMPUT301W24T57/holos-Project",
     },
     {
-      image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/yl.jpg",
+      image:
+        "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/rankanything.png",
       languages: ["MongoDB", "React.js", "Express.js", "Node.js"],
       name: "Rank Anything",
       description:
@@ -46,7 +48,7 @@ export default function Projects() {
       live: "https://rank.msaid.dev/",
     },
     {
-      image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/yl.jpg",
+      image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/v1.png",
       languages: ["HTML/CSS", "JavaScript", "PHP", "nginx"],
       name: "Portfolio Website (old)",
       description:
@@ -56,8 +58,11 @@ export default function Projects() {
     },
   ];
   return (
-    <div className="max-w-[740px] mx-auto justify-center">
-      <div className="flex flex-col space-y-5 mx-5 mt-24 items-center justify-center ">
+    <div className="max-w-[740px] mx-auto justify-center mt-24">
+      <div className="flex flex-col space-y-6 justify-center mx-5">
+        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          My projects.
+        </h1>
         <div
           id="projects"
           className="w-full h-full grid grid-cols-1 sm:grid-cols-2 gap-2 "
