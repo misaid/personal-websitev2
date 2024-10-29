@@ -74,7 +74,7 @@ export default function Home(): JSX.Element {
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
               I like to develop modern, scalable, and secure fullstack
-              applications. If you're looking for a passionate and dedicated
+              applications. If you&apos;re looking for a passionate and dedicated
               developer, feel free to{" "}
               <Link href="/contact" className="underline font-semibold">
                 reach out!
