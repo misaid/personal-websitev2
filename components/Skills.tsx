@@ -121,7 +121,7 @@ export default function Languages(): JSX.Element {
   ];
 
   function handleResize(): void {
-    const viewportWidth = window.innerWidth;
+    const viewportWidth = globalThis.innerWidth;
     if (viewportWidth > 1400) {
       setSize(80);
     } else {
@@ -131,9 +131,9 @@ export default function Languages(): JSX.Element {
 
   useEffect(() => {
     handleResize();
-    window.addEventListener("resize", handleResize);
+    globalThis.addEventListener("resize", handleResize);
     setMounted(true);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => globalThis.removeEventListener("resize", handleResize);
   }, []);
 
   return (
