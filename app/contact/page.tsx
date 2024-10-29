@@ -1,10 +1,13 @@
 "use client";
+// External imports
 import React from "react";
 import { toast, Toaster } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-// import { cn } from "@/lib/utils";
+import Link from "next/link";
+
+// Internal imports
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -147,7 +150,14 @@ export default function Contact() {
                 Submit
               </Button>
               <p className="text-xs text-muted-foreground">
-                By submitting this form, I agree to the privacy policy.
+                By submitting this form, I agree to the{" "}
+                <Link
+                  href="/privacy"
+                  className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
+                >
+                  privacy policy
+                </Link>
+                .
               </p>
             </form>
           </Form>

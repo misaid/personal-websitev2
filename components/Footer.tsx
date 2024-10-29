@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -9,7 +11,12 @@ export default function Footer() {
           <div className="w-full">
             <h4 className="text-sm text-muted-foreground">
               © 2024 mohamedsaid.ca |{" "}
-              <span className="font-semibold">privacy</span>
+              <Link
+                href="/privacy"
+                className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
+              >
+                privacy
+              </Link>
             </h4>
           </div>
 

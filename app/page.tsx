@@ -2,7 +2,7 @@
 // External Imports
 import { Linkedin, Github, Mail } from "lucide-react";
 import { ArrowRight } from "lucide-react";
-
+import Link from "next/link";
 // Internal Imports
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Uofa from "@/components/Uofa";
@@ -73,11 +73,12 @@ export default function Home(): JSX.Element {
               Hello, My name is Mohamed <span>👋</span>
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
-              lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              ultricies, nisl nec lacinia fermentum, felis odio ultricies nunc,
-              a ultrices nisl justo sit amet odio. Donec ultricies, nisl nec
-              lacinia fermentum, felis odio ultricies nunc, a ultrices nisl
-              justo sit amet
+              I like to develop modern, scalable, and secure fullstack
+              applications. If you're looking for a passionate and dedicated
+              developer, feel free to{" "}
+              <Link href="/contact" className="underline font-semibold">
+                reach out!
+              </Link>
             </p>
           </div>
           {/* Languages */}
@@ -157,12 +158,6 @@ export default function Home(): JSX.Element {
               </div>
             </div>
             <Projects />
-          </div>
-          {/* notice */}
-          <div className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 shadow-md rounded-lg border mt-5 flex justify-center">
-            <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight ">
-              🚧 SITE UNDER CONSTRUCTION 🚧
-            </h3>
           </div>
         </div>
       </div>
