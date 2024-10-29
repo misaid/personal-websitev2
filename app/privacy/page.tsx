@@ -1,4 +1,6 @@
 "use client";
+import Link from "next/link";
+
 export default function Privacy() {
   return (
     <div className="max-w-[740px] mx-auto justify-center mt-24">
@@ -17,8 +19,8 @@ export default function Privacy() {
 
         <p className="leading-7 [&:not(:first-child)]:mt-6">
           Welcome to my little corner of the internet! This privacy policy is
-          pretty straightforward because, well, I don't do much with your data.
-          Let's break it down.
+          pretty straightforward because, well, I don&apos;t do much with your
+          data. Let&apos;s break it down.
         </p>
 
         <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors">
@@ -26,24 +28,24 @@ export default function Privacy() {
         </h2>
 
         <p className="leading-7 [&:not(:first-child)]:mt-6">
-          This is just a portfolio site, so I keep things simple. Here's what I
-          might collect:
+          This is just a portfolio site, so I keep things simple. Here&apos;s
+          what I might collect:
         </p>
 
         <h3 className="mt-8 scroll-m-20 text-xl font-semibold tracking-tight">
           1. Analytics Stuff
         </h3>
         <p className="leading-7 [&:not(:first-child)]:mt-6">
-          Basic visit data to see if anyone's actually reading this (hi mom!
-          👋). This includes things like which pages you visit and how long you
-          stay - nothing personal or creepy.
+          Basic visit data to see if anyone&apos;s actually reading this (hi
+          mom! 👋). This includes things like which pages you visit and how long
+          you stay - nothing personal or creepy.
         </p>
 
         <h3 className="mt-8 scroll-m-20 text-xl font-semibold tracking-tight">
           2. Contact Form Info
         </h3>
         <p className="leading-7 [&:not(:first-child)]:mt-6">
-          If you reach out through the contact form, I'll only see what you
+          If you reach out through the contact form, I&apos;ll only see what you
           choose to share. Usually just your name, email, and whatever message
           you send my way.
         </p>
@@ -61,7 +63,7 @@ export default function Privacy() {
         </h2>
         <p className="leading-7 [&:not(:first-child)]:mt-6">
           I do my best to keep things secure, but the internet is the internet.
-          Don't share any state secrets in the contact form, okay? 😉
+          Don&apos;t share any state secrets in the contact form, okay? 😉
         </p>
 
         <h2 className="mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors">
@@ -70,12 +72,12 @@ export default function Privacy() {
         <p className="leading-7 [&:not(:first-child)]:mt-6">
           Got questions? Want to chat? Found a bug? Just want to say hi? Hit me
           up through the{" "}
-          <a
+          <Link
             href="/contact"
             className="font-medium text-primary underline underline-offset-4"
           >
             contact form
-          </a>
+          </Link>
           .
         </p>
       </div>
