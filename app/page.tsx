@@ -14,8 +14,6 @@ import Projects from "@/components/Projects";
  * It is composed of a Navbar component and a user profile component.
  * @returns Home {JSX.Element} - A JSX element representing the Home component.
  */
-
-// keep space of 5 rem between items
 export default function Home(): JSX.Element {
   return (
     <div className="w-full h-full">

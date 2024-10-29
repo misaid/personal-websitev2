@@ -10,6 +10,10 @@ interface Project {
   live?: string;
 }
 
+/**
+ * The Projects page component
+ * @returns {JSX.Element} - The Projects page
+ */
 export default function Projects() {
   const projects: Project[] = [
     {
