@@ -63,7 +63,7 @@ export default function Contact() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const _data = await response.json();
+      await response.json();
       toast.success("Form submitted successfully!");
     } catch (error) {
       console.error("Form submission error", error);
