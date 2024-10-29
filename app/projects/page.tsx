@@ -13,7 +13,8 @@ interface Project {
 export default function Projects() {
   const projects: Project[] = [
     {
-      image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/yl.jpg",
+      image:
+        "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/genshop.png",
       languages: [
         "MongoDB",
         "React.js",
@@ -30,7 +31,7 @@ export default function Projects() {
     },
     {
       image:
-        "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/snapshot_2024-10-26_22-29-47.png",
+        "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/holos.png",
       languages: ["Java", "XML", "OneSignal", "Firebase"],
       name: "Holos",
       description:

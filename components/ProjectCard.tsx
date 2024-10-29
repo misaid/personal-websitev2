@@ -56,14 +56,14 @@ export default function ProjectCard({
           }}
         />
         <div className="flex flex-col   space-y-8">
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-2 max-h-[300px] h-full">
             <AspectRatio ratio={16 / 9}>
               <Image
                 src={image}
                 alt={name}
-                width={1920}
-                height={1080}
-                className="rounded-lg"
+                width={533}
+                height={300}
+                className="rounded-lg object-cover w-full h-[170px]"
               />
             </AspectRatio>
             <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
