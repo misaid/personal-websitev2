@@ -20,28 +20,26 @@ export default function Home(): JSX.Element {
       <div className="max-w-[740px] mx-auto mt-5 justify-center">
         <div className="flex flex-col space-y-5 mx-5 mt-24 items-center justify-center ">
           {/* User Profile */}
-          <div className="items-center flex space-x-2 w-full p-4 shadow-md rounded-lg border">
-            <div className="flex ">
+          <div className="items-center flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-2 w-full p-4 shadow-md rounded-lg border justify-center">
+            <div className="flex">
               <Avatar>
                 {/* placeholder */}
                 <AvatarImage src="https://media.licdn.com/dms/image/v2/D5635AQFojf8ezVE49Q/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1718348643162?e=1729832400&v=beta&t=4qX594zw4al9O_ud1G5g4hdVfla1CRXf-TTf9vRnzqs" />
                 <AvatarFallback>MS</AvatarFallback>
               </Avatar>
             </div>
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full text-center sm:text-left">
               <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
                 Mohamed Said
               </h2>
-              <div className="flex flex-row space-x-1.5 items-center">
-                <h2 className="text-sm font-medium leading-none">
-                  Student@University of Alberta
-                </h2>
-              </div>
+              <h2 className="text-sm font-medium leading-none">
+                Student@University of Alberta
+              </h2>
               <h4 className="text-sm font-light leading-none">
                 📍 Edmonton, Alberta 🇨🇦
               </h4>
             </div>
-            <div className="flex w-full justify-end items-center">
+            <div className="flex justify-center sm:justify-end">
               <div className="flex flex-row space-x-2">
                 <a
                   href="https://www.linkedin.com/in/misaid"
@@ -50,7 +48,6 @@ export default function Home(): JSX.Element {
                 >
                   <Linkedin />
                 </a>
-
                 <a
                   href="https://www.github.com/misaid"
                   target="_blank"
