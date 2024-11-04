@@ -34,14 +34,11 @@ export default function Home(): JSX.Element {
               </h2>
               <div className="flex flex-row space-x-1.5 items-center">
                 <h2 className="text-sm font-medium leading-none">
-                  Student@UofA
+                  Student@University of Alberta
                 </h2>
-                <div className="w-2.5 h-2.5 flex flex-row items-center">
-                  <Uofa />
-                </div>
               </div>
               <h4 className="text-sm font-light leading-none">
-                🇨🇦 📍 Edmonton, Alberta
+                📍 Edmonton, Alberta 🇨🇦
               </h4>
             </div>
             <div className="flex w-full justify-end items-center">
@@ -74,8 +71,8 @@ export default function Home(): JSX.Element {
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
               I like to develop modern, scalable, and secure fullstack
-              applications. If you&apos;re looking for a passionate and dedicated
-              developer, feel free to{" "}
+              applications. If you&apos;re looking for a passionate and
+              dedicated developer, feel free to{" "}
               <Link href="/contact" className="underline font-semibold">
                 reach out!
               </Link>
