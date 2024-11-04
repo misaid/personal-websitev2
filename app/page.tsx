@@ -20,7 +20,7 @@ export default function Home(): JSX.Element {
       <div className="max-w-[740px] mx-auto mt-5 justify-center">
         <div className="flex flex-col space-y-5 mx-5 mt-24 items-center justify-center ">
           {/* User Profile */}
-          <div className="items-center flex space-x-2 w-full p-4 shadow-md rounded-lg border">
+          <div className="items-center flex space-x-2 w-full p-4 shadow-md rounded-lg ">
             <div className="flex ">
               <Avatar>
                 {/* placeholder */}
@@ -68,25 +68,25 @@ export default function Home(): JSX.Element {
             </div>
           </div>
           {/* Yap */}
-          <div className="flex-col space-y-2 w-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border mt-5">
+          <div className="flex-col space-y-2 w-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg  mt-5">
             <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
               Hello, My name is Mohamed <span>👋</span>
             </h2>
             <p className="leading-7 [&:not(:first-child)]:mt-6">
               I like to develop modern, scalable, and secure fullstack
-              applications. If you&apos;re looking for a passionate and dedicated
-              developer, feel free to{" "}
+              applications. If you&apos;re looking for a passionate and
+              dedicated developer, feel free to{" "}
               <Link href="/contact" className="underline font-semibold">
                 reach out!
               </Link>
             </p>
           </div>
           {/* Languages */}
-          <div className="w-full h-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border mt-5">
+          <div className="w-full h-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg  mt-5">
             <Languages />
           </div>
           {/*School*/}
-          <div className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 shadow-md rounded-lg border mt-5">
+          <div className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 shadow-md rounded-lg  mt-5">
             <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
               School
             </h2>
@@ -143,7 +143,7 @@ export default function Home(): JSX.Element {
             </div>
           </div>
           {/* Projects */}
-          <div className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 shadow-md rounded-lg border mt-5">
+          <div className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 shadow-md rounded-lg  mt-5">
             <div className="w-full flex flex-row border-b pb-2 items-center">
               <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0">
                 Projects
