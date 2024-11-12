@@ -122,7 +122,8 @@ export default function Home(): JSX.Element {
                   </li>
                   <li>
                     Developed an image compression program that achieves up to
-                    83% compression using Discrete Cosine Transform
+                    83% compression using Discrete Cosine Transform and Huffman
+                    encoding
                   </li>
                   <li>
                     Implemented data structures like linked lists, stacks, and
