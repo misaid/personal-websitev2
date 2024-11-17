@@ -21,7 +21,7 @@ const Uofa = () => {
   }
 
   return (
-    <div className="w-full h-full min-w-[20px] min-h-[20px] flex items-center">
+    <div className="w-full h-full min-w-[10px] min-h-[10px] flex items-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 216 274.63"

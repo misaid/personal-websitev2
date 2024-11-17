@@ -2,7 +2,7 @@ import React from "react";
 import ProjectCard from "@/components/ProjectCard";
 
 interface Project {
-  image: string;
+  image?: string;
   languages: string[];
   name: string;
   description: string;
@@ -16,6 +16,14 @@ interface Project {
  */
 export default function Projects() {
   const projects: Project[] = [
+    {
+      image:
+        "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/twitter2.png",
+      languages: ["Python", "SQLite"],
+      name: "Twitter CLI",
+      description:
+        "A command-line interface Twitter clone that enables users to post tweets, view tweets, follow others, and access a personalized feed. Developed as part of a closed-source school assignment.",
+    },
     {
       image:
         "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/genshop.png",

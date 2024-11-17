@@ -1,7 +1,7 @@
 import ProjectCard from "@/components/ProjectCard";
 
 interface Project {
-  image: string;
+  image?: string;
   languages: string[];
   name: string;
   description: string;

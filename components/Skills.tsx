@@ -149,7 +149,7 @@ export default function Languages(): JSX.Element {
           with.
         </p>
       </div>
-      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
         {mounted &&
           skills.map((skill, index) => (
             <Boxes

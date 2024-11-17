@@ -3,13 +3,13 @@ import Tilt from "react-parallax-tilt";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { useRef, useState } from "react";
-import { Github, Globe } from "lucide-react";
+import { Github, Globe, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 type Props = {
-  image: string;
+  image?: string;
   languages: string[];
   name: string;
   description: string;
@@ -58,13 +58,19 @@ export default function ProjectCard({
         <div className="flex flex-col   space-y-8">
           <div className="flex flex-col space-y-2 max-h-[300px] h-full">
             <AspectRatio ratio={16 / 9}>
-              <Image
-                src={image}
-                alt={name}
-                width={533}
-                height={300}
-                className="rounded-lg object-cover w-full h-[170px]"
-              />
+              {image ? (
+                <Image
+                  src={image}
+                  alt={name}
+                  width={533}
+                  height={300}
+                  className="rounded-lg object-cover w-full h-[170px]"
+                />
+              ) : (
+                <div className="w-full h-full flex justify-center items-center">
+                  <Code size={42} />
+                </div>
+              )}
             </AspectRatio>
             <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
               {name}
