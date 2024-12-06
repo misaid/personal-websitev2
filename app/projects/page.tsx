@@ -67,7 +67,7 @@ export default function Projects() {
       description:
         "A static website that showcases my projects, skills, and experience. Features include a responsive design, interactive elements, and a clean user interface.",
       source: "https://github.com/misaid/Personal-Website",
-      live: "https://msaid.dev/",
+      // live: "https://msaid.dev/",
     },
   ];
   return (
