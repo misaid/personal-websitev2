@@ -76,7 +76,7 @@ export default function Home(): JSX.Element {
             </p>
           </div>
           {/* Languages */}
-          <div className="w-full h-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border mt-5">
+          <div className="w-full min-h-[400px] h-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border mt-5">
             <Languages />
           </div>
           {/*School*/}
