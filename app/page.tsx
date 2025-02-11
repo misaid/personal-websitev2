@@ -90,7 +90,7 @@ export default function Home(): JSX.Element {
               </div>
               <div className="flex flex-col w-full">
                 <p className="text-sm text-muted-foreground">
-                  Sep 2022 - Apr 2025
+                  Sep 2022 - Jun 2025
                 </p>
                 <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
                   University of Alberta
