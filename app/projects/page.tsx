@@ -57,7 +57,7 @@ export default function Projects() {
       name: "Rank Anything",
       description:
         "A full-stack web application that allows users to create, share, and vote on lists. Features include user authentication, real-time updates, and dynamic list generation.",
-      source: "https://github.com/misaids/rank-anything",
+      source: "https://github.com/misaid/rank-anything",
       live: "https://rank.msaid.dev/",
     },
     {
