@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import Tilt from "react-parallax-tilt";
 // languages
 import {
@@ -21,7 +21,7 @@ import {
   SiPostgresql,
   SiMongodb,
 } from "react-icons/si";
-import { DiMysql } from "react-icons/di";
+// import { DiMysql } from "react-icons/di";
 // tools
 import {
   SiGit,
