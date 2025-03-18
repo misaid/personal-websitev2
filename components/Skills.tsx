@@ -139,14 +139,18 @@ export default function Languages(): JSX.Element {
       </div>
       <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
         {skills.map((skill, index) => (
-          <Boxes
+          <div
             key={index}
-            icon={skill.icon}
-            name={skill.name}
-            description={skill.description}
-          />
-        ))}
-      </div>
+            style={{
+              flex: "0 1 calc(33.333% - 1rem)",
+              minWidth: "110px",
+              maxWidth: "200px",
+            }}
+          >
+            <Boxes {...skill} />
+          </div>
+        ))}{" "}
+      </div>{" "}
     </div>
   );
 }
