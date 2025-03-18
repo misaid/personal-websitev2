@@ -137,7 +137,7 @@ export default function Languages(): JSX.Element {
       <div>
         {/* <DiMysql style={{ fontSize: "clamp(24px, 5vw, 80px)" }} /> */}
       </div>
-      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 animate-in fade-in">
+      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
         {skills.map((skill, index) => (
           <Boxes
             key={index}
