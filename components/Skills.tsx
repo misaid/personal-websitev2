@@ -143,7 +143,7 @@ export default function Languages(): JSX.Element {
             key={index}
             style={{
               flex: "0 1 calc(33.333% - 1rem)",
-              minWidth: "110px",
+              minWidth: "100px",
               maxWidth: "200px",
             }}
           >

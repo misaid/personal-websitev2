@@ -62,8 +62,8 @@ export default function Home(): JSX.Element {
               </div>
             </div>
           </div>
-          {/* Yap */}
 
+          {/* Bio */}
           <div className="flex-col space-y-2 w-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border mt-5">
             <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
               Hello, My name is Mohamed <span>👋</span>
@@ -77,7 +77,8 @@ export default function Home(): JSX.Element {
               </Link>
             </p>
           </div>
-          {/*School/ WorkExp*/}
+
+          {/*School / WorkExp*/}
           <Tabs defaultValue="workexp" className="mt-5 w-full">
             <TabsList className="w-full">
               <TabsTrigger value="workexp" className="w-full">
@@ -104,13 +105,13 @@ export default function Home(): JSX.Element {
                       Bachelor of Science in Computing Science
                     </h3>
 
-                    {/* <ul className="my-6 ml-6 list-disc [&>li]:mt-2 block sm:hidden"> */}
-                    {/*   <li>Intro to Software Engineering</li> */}
-                    {/*   <li>Computational Cryptography</li> */}
-                    {/*   <li>Software Process and Product Management</li> */}
-                    {/*   <li> Practical Programming Methodology</li> */}
-                    {/* </ul> */}
-                    <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+                    <ul className="my-6 ml-6 list-disc [&>li]:mt-2 block sm:hidden">
+                      <li>Intro to Software Engineering</li>
+                      <li>Computational Cryptography</li>
+                      <li>Software Process and Product Management</li>
+                      <li> Practical Programming Methodology</li>
+                    </ul>
+                    <ul className="my-6 ml-6 list-disc [&>li]:mt-2 sm:block hidden">
                       <li>
                         <span className="font-medium">
                           Relevant Coursework:
