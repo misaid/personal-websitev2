@@ -21,7 +21,7 @@ import {
   SiPostgresql,
   SiMongodb,
 } from "react-icons/si";
-// import { DiMysql } from "react-icons/di";
+import { DiMysql } from "react-icons/di";
 // tools
 import {
   SiGit,
@@ -37,104 +37,89 @@ interface Skill {
 }
 
 export default function Languages(): JSX.Element {
-  const [size, setSize] = useState(0);
-  const [mounted, setMounted] = useState(false);
-
   const skills: Skill[] = [
-    { icon: <FaJava size={size} />, name: "Java", description: "OOP Language" },
     {
-      icon: <FaPython size={size} />,
+      icon: <FaJava style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
+      name: "Java",
+      description: "OOP Language",
+    },
+    {
+      icon: <FaPython style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "Python",
       description: "Language",
     },
     {
-      icon: <SiTypescript size={size} />,
+      icon: <SiTypescript style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "TypeScript",
       description: "Typed JS",
     },
     {
-      icon: <SiCplusplus size={size} />,
+      icon: <SiCplusplus style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "C++",
       description: "Language",
     },
     // {
-    //   icon: <SiDjango size={size} />,
+    //   icon: <SiDjango style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
     //   name: "Django",
     //   description: "Web Framework",
     // },
     {
-      icon: <SiReact size={size} />,
+      icon: <SiReact style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "React",
       description: "JavaScript Framework",
     },
     // {
-    //   icon: <SiNodedotjs size={size} />,
+    //   icon: <SiNodedotjs style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
     //   name: "Node.js",
     //   description: "Server-side JS",
     // },
     {
-      icon: <SiNextdotjs size={size} />,
+      icon: <SiNextdotjs style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "Next.js",
       description: "React Framework",
     },
     {
-      icon: <SiExpress size={size} />,
+      icon: <SiExpress style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "Express",
       description: "Web Framework",
     },
     {
-      icon: <SiPostgresql size={size} />,
+      icon: <SiPostgresql style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "PostgreSQL",
       description: "SQL Database",
     },
     // {
-    //   icon: <DiMysql size={size} />,
+    //   icon: <DiMysql style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
     //   name: "MySQL",
     //   description: "SQL Database",
     // },
     {
-      icon: <SiMongodb size={size} />,
+      icon: <SiMongodb style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "MongoDB",
       description: "NoSQL Database",
     },
     // {
-    //   icon: <SiSqlite size={size} />,
+    //   icon: <SiSqlite style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
     //   name: "SQLite",
     //   description: "Embedded DB",
     // },
     {
-      icon: <SiGit size={size} />,
+      icon: <SiGit style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "Git",
       description: "Version Control",
     },
     {
-      icon: <SiDocker size={size} />,
+      icon: <SiDocker style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "Docker",
       description: "Containerization",
     },
-    // { icon: <SiLinux size={size} />, name: "Linux", description: "OS" },
+    // { icon: <SiLinux style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />, name: "Linux", description: "OS" },
     {
-      icon: <SiNeovim size={size} />,
+      icon: <SiNeovim style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "Neovim",
       description: "Text Editor",
     },
   ];
-
-  function handleResize(): void {
-    const viewportWidth = globalThis.innerWidth;
-    if (viewportWidth > 1400) {
-      setSize(80);
-    } else {
-      setSize(viewportWidth * 0.06);
-    }
-  }
-
-  useEffect(() => {
-    handleResize();
-    globalThis.addEventListener("resize", handleResize);
-    setMounted(true);
-    return () => globalThis.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <div className="flex flex-col justify-center space-y-3">
@@ -149,16 +134,18 @@ export default function Languages(): JSX.Element {
           with.
         </p>
       </div>
+      <div>
+        {/* <DiMysql style={{ fontSize: "clamp(24px, 5vw, 80px)" }} /> */}
+      </div>
       <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 animate-in fade-in">
-        {mounted &&
-          skills.map((skill, index) => (
-            <Boxes
-              key={index}
-              icon={skill.icon}
-              name={skill.name}
-              description={skill.description}
-            />
-          ))}
+        {skills.map((skill, index) => (
+          <Boxes
+            key={index}
+            icon={skill.icon}
+            name={skill.name}
+            description={skill.description}
+          />
+        ))}
       </div>
     </div>
   );
