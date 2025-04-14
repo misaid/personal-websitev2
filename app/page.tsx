@@ -184,9 +184,9 @@ export default function Home(): JSX.Element {
                     <p className="text-sm text-muted-foreground">
                       July 2024 – Oct 2024
                     </p>
-                    <h3 className="text-lg font-medium">
+                    <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
                       LLM Evaluation Analyst
-                    </h3>
+                    </h2>
                     <p className="text-muted-foreground">Outlier, Remote</p>
                     <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
                       <li>
