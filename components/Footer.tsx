@@ -5,9 +5,9 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className="mb-[100px] max-w-[740px] mx-auto justify-center">
+    <div className="mb-[100px] max-w-[740px] mx-auto justify-center w-full">
       <div className="flex flex-col space-y-5 mx-5 items-center justify-center">
-        <div className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 rounded-lg mt-5 flex items-center">
+        <div className="w-full max-w-[700px] mx-5 py-4 space-y-2.5 rounded-lg mt-5 flex items-center">
           <div className="w-full">
             <h4 className="text-sm text-muted-foreground">
               © 2024 mohamedsaid.ca |{" "}
