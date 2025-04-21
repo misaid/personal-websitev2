@@ -34,7 +34,7 @@ export default function Home(): JSX.Element {
                 Mohamed Said
               </h2>
               <h2 className="text-sm font-medium leading-none">
-                Student@University of Alberta
+                Student at the University of Alberta
               </h2>
               <h4 className="text-sm font-light leading-none">
                 📍 Edmonton, Alberta 🇨🇦
@@ -85,7 +85,7 @@ export default function Home(): JSX.Element {
                 Work Experience
               </TabsTrigger>
               <TabsTrigger value="school" className="w-full">
-                School
+                Education
               </TabsTrigger>
             </TabsList>
             <TabsContent value="school">
