@@ -18,11 +18,26 @@ export default function Projects() {
   const projects: Project[] = [
     {
       image:
+        "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/msb_feed.png",
+      languages: [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "HTML/CSS",
+        "JavaScript",
+        "Docker",
+      ],
+      name: "Social Distribution",
+      description:
+        "A full-stack distributed web application inspired by Mastodon, enabling users to share content and interact across federated nodes. Developed as part of a closed-source academic assignment.",
+    },
+    {
+      image:
         "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/twitter2.png",
       languages: ["Python", "SQLite"],
       name: "Twitter CLI",
       description:
-        "A command-line interface Twitter clone that enables users to post tweets, view tweets, follow others, and access a personalized feed. Developed as part of a closed-source school assignment.",
+        "A command-line interface Twitter clone that enables users to post tweets, view tweets, follow others, and access a personalized feed. Developed as part of a closed-source academic assignment.",
     },
     {
       image:
@@ -44,7 +59,7 @@ export default function Projects() {
     {
       image:
         "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/holos.png",
-      languages: ["Java", "XML", "OneSignal", "Firebase"],
+      languages: ["Java", "XML", "OneSignal", "Firebase", "Jest", "Figma"],
       name: "Holos",
       description:
         "An event management application for android that allows users to create, share, and join events. Features include real-time notifications, user authentication, and QR code check-in.",
