@@ -68,6 +68,7 @@ export default function Contact() {
 
       await response.json();
       toast.success("Form submitted successfully!");
+      form.reset();
     } catch (error) {
       console.error("Form submission error", error);
       toast.error("Failed to submit the form. Please try again.");
