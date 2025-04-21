@@ -21,11 +21,12 @@ export default function Footer() {
           </div>
 
           <div className="flex w-full justify-end items-center">
-            <div className="flex flex-row space-x-2">
+            <div className="flex flex-row space-x-4">
               <a
                 href="https://www.linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
               >
                 <Linkedin />
               </a>
@@ -34,10 +35,14 @@ export default function Footer() {
                 href="https://www.github.com/misaid"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
               >
                 <Github />
               </a>
-              <a href="mailto:mohamediasaid@outlook.ca">
+              <a
+                href="mailto:mohamediasaid@outlook.ca"
+                className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
+              >
                 <Mail />
               </a>
             </div>
