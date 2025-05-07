@@ -29,13 +29,13 @@ export default function Home(): JSX.Element {
                 <AvatarFallback>MS</AvatarFallback>
               </Avatar>
             </div>
-            <div className="flex flex-col w-full text-center sm:text-left">
+            <div className="flex flex-col w-full text-center sm:text-left [&>h4]:mt-1 ">
               <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
                 Mohamed Said
               </h2>
-              <h2 className="text-sm font-medium leading-none">
-                Student at the University of Alberta
-              </h2>
+              <h4 className="text-sm font-medium leading-none">
+                Software Developer
+              </h4>
               <h4 className="text-sm font-light leading-none">
                 📍 Edmonton, Alberta 🇨🇦
               </h4>
@@ -161,9 +161,7 @@ export default function Home(): JSX.Element {
                     <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
                       Student Software Developer
                     </h2>
-                    <p className="text-muted-foreground">
-                      Nexzones, Edmonton, AB
-                    </p>
+                    <p className="text-muted-foreground">Nexzones</p>
                     <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
                       <li>
                         Developed a no-code, node-based solution that improved
@@ -192,7 +190,7 @@ export default function Home(): JSX.Element {
                     <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
                       AI Evaluation Analyst
                     </h2>
-                    <p className="text-muted-foreground">Outlier, Remote</p>
+                    <p className="text-muted-foreground">Outlier</p>
                     <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
                       <li>
                         Conducted analysis of prompt responses from Large
