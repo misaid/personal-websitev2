@@ -25,7 +25,7 @@ export default function Home(): JSX.Element {
             <div className="flex">
               <Avatar>
                 {/* placeholder */}
-                <AvatarImage src="https://media.licdn.com/dms/image/v2/D5603AQHe_4B9mxfKww/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718278675835?e=1747872000&v=beta&t=-S8l8DDr5O9E4AAc7IGEQkidgI5paz8t2313JopjYuI" />
+                <AvatarImage src="https://moprojects.s3.us-east-2.amazonaws.com/portfolio/hiking.png" />
                 <AvatarFallback>MS</AvatarFallback>
               </Avatar>
             </div>
