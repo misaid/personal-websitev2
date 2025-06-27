@@ -21,26 +21,23 @@ export default function Home(): JSX.Element {
       <div className="max-w-[740px] mx-auto mt-5 justify-center">
         <div className="flex flex-col space-y-5 mx-5 mt-24 items-center justify-center ">
           {/* User Profile */}
-          <div className="items-center flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-2 w-full p-4 shadow-md rounded-lg border justify-center">
-            <div className="flex">
-              <Avatar>
-                {/* placeholder */}
-                <AvatarImage
-                  src="https://moprojects.s3.us-east-2.amazonaws.com/portfolio/hiking.png"
-                  alt="Avatar Image"
-                />
-                <AvatarFallback>MS</AvatarFallback>
-              </Avatar>
+          <div className="items-center flex flex-col sm:flex-row space-y-4 sm:space-y-0 w-full p-4 shadow-md rounded-lg border justify-center">
+            <div className="flex sm:mr-4">
+              <img
+                src="https://moprojects.s3.us-east-2.amazonaws.com/portfolio/hiking.png"
+                alt="Avatar"
+                className="w-[100px] rounded-lg object-cover"
+              />
             </div>
             <div className="flex flex-col w-full text-center sm:text-left [&>h4]:mt-1 ">
               <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
                 Mohamed Said
               </h2>
               <h4 className="text-sm font-medium leading-none">
-                Software Developer
+                Software Engineer
               </h4>
               <h4 className="text-sm font-light leading-none">
-                📍 Edmonton, Alberta 🇨🇦
+                Edmonton, Alberta 🇨🇦
               </h4>
             </div>
             <div className="flex justify-center sm:justify-end">
