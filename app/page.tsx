@@ -3,8 +3,8 @@
 import { Linkedin, Github, Mail } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 // Internal Imports
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Uofa from "@/components/Uofa";
 import Languages from "@/components/Skills";
 import Projects from "@/components/Projects";
@@ -23,10 +23,12 @@ export default function Home(): JSX.Element {
           {/* User Profile */}
           <div className="items-center flex flex-col sm:flex-row space-y-4 sm:space-y-0 w-full p-4 shadow-md rounded-lg border justify-center">
             <div className="flex sm:mr-4">
-              <img
+              <Image
                 src="https://moprojects.s3.us-east-2.amazonaws.com/portfolio/hiking.png"
-                alt="Avatar"
-                className="w-[100px] rounded-lg object-cover"
+                alt="Mohamed Said"
+                width={100}
+                height={100}
+                className="rounded-lg"
               />
             </div>
             <div className="flex flex-col w-full text-center sm:text-left [&>h4]:mt-1 ">
