@@ -227,12 +227,12 @@ export default function Home(): JSX.Element {
                 Projects
               </h2>
               <div className="w-full flex flex-row justify-end">
-                <a
+                <Link
                   className="p-2 flex flex-row items-center space-x-1 text-base text-muted-foreground hover:cursor-pointer"
                   href="/projects"
                 >
                   <h3>See more</h3> <ArrowRight />
-                </a>
+                </Link>
               </div>
             </div>
             <Projects />
