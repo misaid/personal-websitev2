@@ -36,7 +36,7 @@ export default function Home(): JSX.Element {
                 Mohamed Said
               </h2>
               <h4 className="text-sm font-medium leading-none">
-                Software Engineer
+                Software Developer
               </h4>
               <h4 className="text-sm font-light leading-none">
                 Edmonton, Alberta 🇨🇦
