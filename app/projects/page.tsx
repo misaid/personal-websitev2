@@ -17,6 +17,24 @@ interface Project {
 export default function Projects() {
   const projects: Project[] = [
     {
+      image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/homi.png",
+      languages: [
+        "Expo",
+        "React Native",
+        "React Query",
+        "Clerk",
+        "Rails",
+        "PostgreSQL",
+        "Redis",
+        "Supabase Storage",
+      ],
+      name: "Homi",
+      description:
+        "Homi is a lightweight property management app for small teams and independent landlords. Manage units and tenants, track rent and payments, log maintenance issues, and upload photos a simple, mobile-first UI.",
+
+      source: "https://github.com/misaid/homi",
+    },
+    {
       image:
         "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/msb_feed.png",
       languages: [
