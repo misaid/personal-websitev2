@@ -1,31 +1,27 @@
 import { useRef, useState } from "react";
 import Tilt from "react-parallax-tilt";
 // languages
-import {
-  FaPython,
-  FaJava,
-  // , FaJs
-} from "react-icons/fa";
-import { SiTypescript, SiCplusplus } from "react-icons/si";
+import { FaJava, FaPython } from "react-icons/fa";
+import { SiCplusplus, SiTypescript, SiRuby } from "react-icons/si";
 // frameworks
 import {
-  // SiDjango,
-  SiReact,
   // SiNodedotjs,
   SiExpress,
   SiNextdotjs,
+  // SiDjango,
+  SiReact,
 } from "react-icons/si";
 // databases
 import {
+  SiMongodb,
   // SiSqlite,
   SiPostgresql,
-  SiMongodb,
 } from "react-icons/si";
 // import { DiMysql } from "react-icons/di";
 // tools
 import {
-  SiGit,
   SiDocker,
+  SiGit,
   // SiLinux,
   SiNeovim,
 } from "react-icons/si";
@@ -46,17 +42,22 @@ export default function Languages(): JSX.Element {
     {
       icon: <FaPython style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "Python",
-      description: "Language",
+      description: "Dynamic language",
     },
     {
       icon: <SiTypescript style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "TypeScript",
-      description: "Typed JS",
+      description: "Typed JavaScript",
     },
     {
       icon: <SiCplusplus style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "C++",
-      description: "Language",
+      description: "Compiled Language",
+    },
+    {
+      icon: <SiRuby style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
+      name: "Ruby",
+      description: "Dynamic Language",
     },
     // {
     //   icon: <SiDjango style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
@@ -66,7 +67,7 @@ export default function Languages(): JSX.Element {
     {
       icon: <SiReact style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
       name: "React",
-      description: "JavaScript Framework",
+      description: "Frontend Library",
     },
     // {
     //   icon: <SiNodedotjs style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
@@ -114,11 +115,11 @@ export default function Languages(): JSX.Element {
       description: "Containerization",
     },
     // { icon: <SiLinux style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />, name: "Linux", description: "OS" },
-    {
-      icon: <SiNeovim style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
-      name: "Neovim",
-      description: "Text Editor",
-    },
+    // {
+    //   icon: <SiNeovim style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
+    //   name: "Neovim",
+    //   description: "Text Editor",
+    // },
   ];
 
   return (
