@@ -23,7 +23,7 @@ import {
   SiDocker,
   SiGit,
   // SiLinux,
-  SiNeovim,
+  // SiNeovim,
 } from "react-icons/si";
 
 interface Skill {
