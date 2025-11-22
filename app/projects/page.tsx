@@ -77,7 +77,7 @@ export default function Projects() {
     {
       image:
         "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/holos.png",
-      languages: ["Java", "XML", "OneSignal", "Firebase", "Jest", "Figma"],
+      languages: ["Java", "XML", "Firebase", "Jest", "Figma"],
       name: "Holos",
       description:
         "An event management application for android that allows users to create, share, and join events. Features include real-time notifications, user authentication, and QR code check-in.",
