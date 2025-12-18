@@ -15,7 +15,7 @@ import {
   // FormDescription,
   FormField,
   FormItem,
-  FormLabel,
+  // FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -25,6 +25,7 @@ const formSchema = z.object({
   name_8403705091: z.string().min(1, "Name is required"),
   name_4765427973: z.string().email("Invalid email address"),
   name_2543664404: z.string().min(1, "Message is required"),
+  company: z.string().optional(),
 });
 
 /**
@@ -38,6 +39,7 @@ export default function Contact() {
       name_8403705091: "",
       name_4765427973: "",
       name_2543664404: "",
+      company: "",
     },
   });
 
@@ -84,43 +86,69 @@ export default function Contact() {
         </h1>
         <div className="items-center flex space-x-2 w-full">
           <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-4 w-full"
-            >
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+                {/* Honeypot */}
+                <FormField
+                  control={form.control}
+                  name="company"
+                  render={({ field }) => (
+                    <FormItem className="absolute left-[-9999px]">
+                      <FormControl>
+                        <Input
+                          type="text"
+                          tabIndex={-1}
+                          autoComplete="off"
+                          {...field}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+
+                {/* Name */}
                 <div className="col-span-12 md:col-span-6">
                   <FormField
                     control={form.control}
                     name="name_8403705091"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel></FormLabel>
                         <FormControl>
-                          <Input
-                            className="text-base"
-                            placeholder="Name"
-                            type="text"
-                            {...field}
-                          />
+                          <Input placeholder="Name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
                 </div>
+
+                {/* Email */}
                 <div className="col-span-12 md:col-span-6">
                   <FormField
                     control={form.control}
                     name="name_4765427973"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel></FormLabel>
                         <FormControl>
-                          <Input
-                            className="text-base"
-                            placeholder="Email"
-                            type="email"
+                          <Input placeholder="Email" type="email" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                {/* Message */}
+                <div className="col-span-12">
+                  <FormField
+                    control={form.control}
+                    name="name_2543664404"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Your message"
+                            className="resize-none h-24"
                             {...field}
                           />
                         </FormControl>
@@ -130,36 +158,22 @@ export default function Contact() {
                   />
                 </div>
               </div>
-              <FormField
-                control={form.control}
-                name="name_2543664404"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel></FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="Your message"
-                        className="text-base resize-none h-24"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button variant={"outline"} type="submit">
-                Submit
-              </Button>
-              <p className="text-xs text-muted-foreground">
-                By submitting this form, I agree to the{" "}
-                <Link
-                  href="/privacy"
-                  className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
-                >
-                  privacy policy
-                </Link>
-                .
-              </p>
+
+              <div className="mt-4">
+                <Button variant="outline" type="submit">
+                  Submit
+                </Button>
+                <p className="text-xs text-muted-foreground mt-4">
+                  By submitting this form, I agree to the{" "}
+                  <Link
+                    href="/privacy"
+                    className="transition-colors hover:text-foreground/80 text-foreground/60 font-semibold"
+                  >
+                    privacy policy
+                  </Link>
+                  .
+                </p>
+              </div>
             </form>
           </Form>
         </div>
