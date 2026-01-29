@@ -158,6 +158,34 @@ export default function Home(): JSX.Element {
                 <div className="w-full h-full rounded-lg flex flex-col space-y-4">
                   <div className="border-b pb-4">
                     <p className="text-sm text-muted-foreground">
+                      Sept 2025 – Jan 2026
+                    </p>
+                    <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
+                      AI Evaluation Analyst
+                    </h2>
+                    <p className="text-muted-foreground">Outlier</p>
+                    <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+                      <li>
+                        Conducted analysis of prompt responses from Large
+                        Language Models to evaluate accuracy and relevance
+                      </li>
+                      <li>
+                        Assessed output for writing quality, coherence, and
+                        adherence to factual information
+                      </li>
+                      <li>
+                        Provided feedback and recommendations for improving
+                        prompt design and model performance
+                      </li>
+                      <li>
+                        Selected to peer-review work from other analysts to
+                        ensure accuracy, consistency, and quality of evaluations
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="text-sm text-muted-foreground">
                       Sept 2024 – Dec 2024
                     </p>
                     <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
@@ -181,34 +209,6 @@ export default function Home(): JSX.Element {
                       <li>
                         Containerized the application using Docker, simplifying
                         deployment and ensuring cross-environment compatibility
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <p className="text-sm text-muted-foreground">
-                      July 2024 – Oct 2024
-                    </p>
-                    <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
-                      AI Evaluation Analyst
-                    </h2>
-                    <p className="text-muted-foreground">Outlier</p>
-                    <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                      <li>
-                        Conducted analysis of prompt responses from Large
-                        Language Models to evaluate accuracy and relevance
-                      </li>
-                      <li>
-                        Assessed output for writing quality, coherence, and
-                        adherence to factual information
-                      </li>
-                      <li>
-                        Provided feedback and recommendations for improving
-                        prompt design and model performance
-                      </li>
-                      <li>
-                        Selected to peer-review work from other analysts to
-                        ensure accuracy, consistency, and quality of evaluations
                       </li>
                     </ul>
                   </div>
