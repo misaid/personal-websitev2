@@ -158,7 +158,7 @@ export default function Home(): JSX.Element {
                 <div className="w-full h-full rounded-lg flex flex-col space-y-4">
                   <div className="border-b pb-4">
                     <p className="text-sm text-muted-foreground">
-                      Sept 2025 – Jan 2026
+                      Sept 2025 – Present
                     </p>
                     <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
                       AI Evaluation Analyst
