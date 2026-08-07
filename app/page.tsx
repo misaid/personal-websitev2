@@ -166,21 +166,27 @@ export default function Home(): JSX.Element {
                     <p className="text-muted-foreground">Outlier</p>
                     <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
                       <li>
-                        Conducted analysis of prompt responses from Large
-                        Language Models to evaluate accuracy and relevance
+                        Evaluated LLM prompt-response pairs for factual
+                        accuracy, coherence, and adherence to writing-quality
+                        guidelines, applying a structured rubric across a high
+                        volume of outputs
                       </li>
                       <li>
-                        Assessed output for writing quality, coherence, and
-                        adherence to factual information
+                        Delivered written feedback and actionable
+                        recommendations on prompt design and model behavior,
+                        contributing to measurable improvements in response
+                        accuracy and relevance
                       </li>
                       <li>
-                        Provided feedback and recommendations for improving
-                        prompt design and model performance
+                        Selected from a pool of analysts to peer-review
+                        evaluations submitted by other reviewers, catching
+                        inconsistencies and enforcing quality standards across
+                        the team
                       </li>
-                      <li>
-                        Selected to peer-review work from other analysts to
-                        ensure accuracy, consistency, and quality of evaluations
-                      </li>
+                      {/* <li> */}
+                      {/*   Selected to peer-review work from other analysts to */}
+                      {/*   ensure accuracy, consistency, and quality of evaluations */}
+                      {/* </li> */}
                     </ul>
                   </div>
 
@@ -194,8 +200,9 @@ export default function Home(): JSX.Element {
                     <p className="text-muted-foreground">Nexzones</p>
                     <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
                       <li>
-                        Developed a no-code, node-based solution that improved
-                        developer workflow by 65% through streamlined operations
+                        Built a no-code, node-based platform that streamlined
+                        daily developer operations, improving workflow
+                        efficiency by 65%
                       </li>
                       <li>
                         Served as Scrum Master for a team of 8 student
