@@ -1,14 +1,18 @@
-"use client";
 // External Imports
-import { Linkedin, Github, Mail } from "lucide-react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 // Internal Imports
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Uofa from "@/components/Uofa";
 import Languages from "@/components/Skills";
 import Projects from "@/components/Projects";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 /**
  * The Home component is a page that displays a user's profile.
@@ -21,69 +25,80 @@ export default function Home(): JSX.Element {
       <div className="max-w-[740px] mx-auto mt-5 justify-center">
         <div className="flex flex-col space-y-5 mx-5 mt-24 items-center justify-center ">
           {/* User Profile */}
-          <div className="items-center flex flex-col sm:flex-row space-y-4 sm:space-y-0 w-full p-4 shadow-md rounded-lg border justify-center">
-            <div className="flex sm:mr-4">
-              <Image
-                src="https://moprojects.s3.us-east-2.amazonaws.com/portfolio/hiking.png"
-                alt="Mohamed Said"
-                width={100}
-                height={100}
-                className="rounded-lg"
-              />
-            </div>
-            <div className="flex flex-col w-full text-center sm:text-left [&>h4]:mt-1 ">
-              <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
-                Mohamed Said
-              </h2>
-              <h4 className="text-sm font-medium leading-none">
-                Software Developer
-              </h4>
-              <h4 className="text-sm font-light leading-none">
-                Edmonton, Alberta 🇨🇦
-              </h4>
-            </div>
-            <div className="flex justify-center sm:justify-end">
-              <div className="flex flex-row space-x-4">
-                <a
-                  href="https://www.linkedin.com/in/misaid"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
-                >
-                  <Linkedin />
-                </a>
-                <a
-                  href="https://www.github.com/misaid"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
-                >
-                  <Github />
-                </a>
-                <a
-                  href="mailto:mohamediasaid@outlook.ca"
-                  className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
-                >
-                  <Mail />
-                </a>
+          <section className="w-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border">
+            <div className="items-center flex flex-col sm:flex-row space-y-4 sm:space-y-0 w-full justify-center">
+              <div className="flex sm:mr-4">
+                <Image
+                  src="https://moprojects.s3.us-east-2.amazonaws.com/portfolio/hiking.png"
+                  alt="Mohamed Said"
+                  width={100}
+                  height={100}
+                  priority
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="flex flex-col w-full text-center sm:text-left [&>h4]:mt-1 ">
+                <h1 className="text-2xl font-semibold tracking-tight">
+                  Mohamed Said
+                </h1>
+                <p className="mt-1 text-sm font-medium leading-none">
+                  Full-Stack Software Developer
+                </p>
+                <p className="mt-1 text-sm font-light leading-none">
+                  Edmonton, Alberta 🇨🇦
+                </p>
+              </div>
+              <div className="flex justify-center sm:justify-end">
+                <div className="flex flex-row space-x-4">
+                  <a
+                    href="https://www.linkedin.com/in/misaid"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Mohamed Said on LinkedIn"
+                    className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
+                  >
+                    <Linkedin />
+                  </a>
+                  <a
+                    href="https://www.github.com/misaid"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Mohamed Said on GitHub"
+                    className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
+                  >
+                    <Github />
+                  </a>
+                  <a
+                    href="mailto:mohamediasaid@outlook.ca"
+                    aria-label="Email Mohamed Said"
+                    className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
+                  >
+                    <Mail />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Bio */}
-          <div className="flex-col space-y-2 w-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border mt-5">
-            <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-              Hello, My name is Mohamed <span>👋</span>
-            </h2>
-            <p className="leading-7 [&:not(:first-child)]:mt-6">
-              I like to develop modern, scalable, and secure fullstack
-              applications. If you&apos;re looking for a passionate and
-              dedicated developer, feel free to{" "}
-              <Link href="/contact" className="underline font-semibold">
-                reach out!
-              </Link>
-            </p>
-          </div>
+            <div className="mt-5 flex flex-col space-y-4 border-t pt-5">
+              <h2 className="scroll-m-20  pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+                I build secure, scalable software. <span>👋</span>
+              </h2>
+              <p className="leading-7 [&:not(:first-child)]:mt-5">
+                I&apos;m Mohamed, a software developer in Edmonton. I build web
+                and mobile products across the front end, back end, databases,
+                and deployment, with experience in AI evaluation and secure
+                software development.
+              </p>
+              <div className="flex flex-wrap gap-3 pt-1">
+                <Button asChild>
+                  <Link href="/projects">View projects</Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link href="/contact">Get in touch</Link>
+                </Button>
+              </div>
+            </div>
+          </section>
 
           {/*School / WorkExp*/}
           <Tabs defaultValue="workexp" className="mt-5 w-full">
@@ -112,43 +127,13 @@ export default function Home(): JSX.Element {
                       Bachelor of Science in Computing Science
                     </h3>
 
-                    <ul className="my-6 ml-6 list-disc [&>li]:mt-2 block sm:hidden">
-                      <li>Intro to Software Engineering</li>
-                      <li>Computational Cryptography</li>
-                      <li>Software Process and Product Management</li>
-                      <li> Practical Programming Methodology</li>
-                    </ul>
-                    <ul className="my-6 ml-6 list-disc [&>li]:mt-2 sm:block hidden">
-                      <li>
-                        <span className="font-medium">
-                          Relevant Coursework:
-                        </span>{" "}
-                        Intro to Software Engineering, Computational
-                        Cryptography, Software Process and Product Management,
-                        Practical Programming Methodology
-                      </li>
-                      <li>
-                        Developed a program to crack weak RSA ciphers using
-                        Euler’s totient function and natural language processing
-                        techniques
-                      </li>
-                      <li>
-                        Built a convolutional neural network model to classify
-                        digits
-                      </li>
-                      <li>
-                        Developed an image compression program that achieves up
-                        to 83% compression using Discrete Cosine Transform
-                      </li>
-                      <li>
-                        Implemented data structures like linked lists, stacks,
-                        and queues in C
-                      </li>
-                      <li>
-                        Collaborated on various team projects, emphasizing
-                        software engineering best practices and code reviews
-                      </li>
-                    </ul>
+                    <p className="mt-3 text-sm leading-6">
+                      Coursework spanning software engineering, algorithms,
+                      databases, cryptography, AI, information retrieval, web
+                      development, and digital image processing. Developed
+                      projects applying these concepts to cryptanalysis, image
+                      processing, search, and web applications.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -223,16 +208,23 @@ export default function Home(): JSX.Element {
               </div>
             </TabsContent>
           </Tabs>
+
           {/* Languages */}
-          <div className="w-full min-h-[400px] h-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border mt-5">
+          <section className="w-full min-h-[400px] h-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border mt-5">
             <Languages />
-          </div>
+          </section>
+
           {/* Projects */}
-          <div className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 shadow-md rounded-lg border mt-5">
+          <section className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 shadow-md rounded-lg border mt-5">
             <div className="w-full flex flex-row border-b pb-2 items-center">
-              <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0">
-                Projects
-              </h2>
+              <div>
+                <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0">
+                  Projects
+                </h2>
+                <p className="text-sm text-muted-foreground">
+                  A sample of product, platform, and academic work.
+                </p>
+              </div>
               <div className="w-full flex flex-row justify-end">
                 <Link
                   className="p-2 flex flex-row items-center space-x-1 text-base text-muted-foreground hover:cursor-pointer"
@@ -243,7 +235,7 @@ export default function Home(): JSX.Element {
               </div>
             </div>
             <Projects />
-          </div>
+          </section>
         </div>
       </div>
     </div>

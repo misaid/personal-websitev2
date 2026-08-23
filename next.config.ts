@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["moprojects.s3.us-east-2.amazonaws.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "moprojects.s3.us-east-2.amazonaws.com",
+        pathname: "/portfolio/**",
+      },
+    ],
   },
 };
 

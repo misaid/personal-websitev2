@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 
 export default function Privacy() {
@@ -10,7 +9,7 @@ export default function Privacy() {
         </h1>
 
         <p className="text-sm text-muted-foreground">
-          Last Updated: October 2024
+          Last Updated: August 2026
         </p>
 
         <h2 className="mt-10 scroll-m-20 text-2xl font-semibold tracking-tight">

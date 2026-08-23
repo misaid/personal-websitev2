@@ -39,7 +39,7 @@ export default function ProjectCard({
   }
   return (
     <Tilt scale={1.02} tiltEnable={false} tiltReverse={true} perspective={5000}>
-      <div
+      <article
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
@@ -64,6 +64,7 @@ export default function ProjectCard({
                   alt={name}
                   width={533}
                   height={300}
+                  sizes="(max-width: 640px) 100vw, 350px"
                   className="rounded-lg object-cover w-full h-[170px]"
                 />
               ) : (
@@ -72,9 +73,9 @@ export default function ProjectCard({
                 </div>
               )}
             </AspectRatio>
-            <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
+            <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
               {name}
-            </h2>
+            </h3>
             <p className="text-sm text-muted-foreground">{description}</p>
           </div>
           <div className="flex flex-col space-y-2">
@@ -87,26 +88,26 @@ export default function ProjectCard({
             </div>
             <div className="flex flex-row w-full space-x-1">
               {source && (
-                <a href={source} target="_blank" rel="noopener noreferrer">
-                  <Button variant={"outline"}>
+                <Button asChild variant="outline">
+                  <a href={source} target="_blank" rel="noopener noreferrer" aria-label={`View ${name} source code`}>
                     <Github />
-                    <h2>Source</h2>
-                  </Button>
-                </a>
+                    Source
+                  </a>
+                </Button>
               )}
 
               {live && (
-                <a href={live} target="_blank" rel="noopener noreferrer">
-                  <Button variant={"outline"}>
+                <Button asChild variant="outline">
+                  <a href={live} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${name} website`}>
                     <Globe />
-                    <h2>Website</h2>
-                  </Button>
-                </a>
+                    Live site
+                  </a>
+                </Button>
               )}
             </div>
           </div>
         </div>
-      </div>
+      </article>
     </Tilt>
   );
 }

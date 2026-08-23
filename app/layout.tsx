@@ -19,8 +19,28 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Mohamed Said",
-  description: "My personal website",
+  metadataBase: new URL("https://mohamedsaid.ca"),
+  title: {
+    default: "Mohamed Said | Full-Stack Software Developer",
+    template: "%s | Mohamed Said",
+  },
+  description:
+    "Mohamed Said is a full-stack software developer in Edmonton building secure, scalable web and mobile applications.",
+  openGraph: {
+    type: "website",
+    locale: "en_CA",
+    url: "/",
+    siteName: "Mohamed Said",
+    title: "Mohamed Said | Full-Stack Software Developer",
+    description:
+      "Full-stack software developer in Edmonton building secure, scalable web and mobile applications.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Mohamed Said | Full-Stack Software Developer",
+    description:
+      "Full-stack software developer in Edmonton building secure, scalable web and mobile applications.",
+  },
 };
 
 export default function RootLayout({

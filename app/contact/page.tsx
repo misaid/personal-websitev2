@@ -15,16 +15,16 @@ import {
   // FormDescription,
   FormField,
   FormItem,
-  // FormLabel,
+  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
-  name_8403705091: z.string().min(1, "Name is required"),
+  name_8403705091: z.string().trim().min(1, "Name is required").max(120, "Name is too long"),
   name_4765427973: z.string().email("Invalid email address"),
-  name_2543664404: z.string().min(1, "Message is required"),
+  name_2543664404: z.string().trim().min(1, "Message is required").max(5_000, "Message must be 5,000 characters or fewer"),
   company: z.string().optional(),
 });
 
@@ -42,6 +42,7 @@ export default function Contact() {
       company: "",
     },
   });
+  const { isSubmitting } = form.formState;
 
   /**
    * Handles the form submission
@@ -113,8 +114,9 @@ export default function Contact() {
                     name="name_8403705091"
                     render={({ field }) => (
                       <FormItem>
+                        <FormLabel>Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Name" {...field} />
+                          <Input placeholder="Your name" autoComplete="name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -129,8 +131,9 @@ export default function Contact() {
                     name="name_4765427973"
                     render={({ field }) => (
                       <FormItem>
+                        <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="Email" type="email" {...field} />
+                          <Input placeholder="you@example.com" type="email" autoComplete="email" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -145,9 +148,10 @@ export default function Contact() {
                     name="name_2543664404"
                     render={({ field }) => (
                       <FormItem>
+                        <FormLabel>Message</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="Your message"
+                            placeholder="How can I help?"
                             className="resize-none h-24"
                             {...field}
                           />
@@ -160,8 +164,8 @@ export default function Contact() {
               </div>
 
               <div className="mt-4">
-                <Button variant="outline" type="submit">
-                  Submit
+                <Button variant="outline" type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending…" : "Send message"}
                 </Button>
                 <p className="text-xs text-muted-foreground mt-4">
                   By submitting this form, I agree to the{" "}
