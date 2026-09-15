@@ -49,7 +49,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="max-w-[900px] mx-auto mt-4 px-4">
+    <div className="max-w-[900px] mx-auto mt-6 px-4 pb-16">
       <Toaster
         toastOptions={{
           style: {
@@ -60,42 +60,48 @@ export default function Contact() {
           },
         }}
       />
-      <div className="mb-[200px]">
-        {/* Terminal prompt */}
-        <div className="text-sm text-[#a6adc8] mb-4">
-          <span className="text-[#a6e3a1]">$</span> ./send-message.sh
-          <span className="text-[#a6e3a1] cursor-blink">_</span>
-        </div>
+      {/* Terminal prompt */}
+      <div className="text-sm text-[#a6adc8] mb-4 select-none" aria-hidden="true">
+        <span className="text-[#a6e3a1]">$</span> ./send-message.sh
+        <span className="text-[#a6e3a1] cursor-blink">_</span>
+      </div>
 
-        <h1 className="text-lg font-bold text-[#b4befe] mb-4">
-          Contact Me.
-        </h1>
+      <h1 className="text-lg font-bold text-[#b4befe] mb-1">
+        Contact me.
+      </h1>
+      <p className="text-sm text-[#9399b2] mb-4">
+        The fastest way to reach me. I usually reply within a couple of days.
+      </p>
 
-        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full" noValidate>
           {/* Honeypot */}
           <input
             type="text"
             tabIndex={-1}
             autoComplete="off"
-            className="absolute left-[-9999px]"
+            aria-hidden="true"
+            className="absolute left-[-9999px] h-px w-px overflow-hidden"
             {...form.register("company")}
           />
 
           <div className="space-y-3">
             {/* Name */}
             <div>
-              <label className="text-xs text-[#a6adc8] block mb-1">
+              <label htmlFor="contact-name" className="text-xs text-[#a6adc8] block mb-1">
                 &gt; Name:
               </label>
               <input
+                id="contact-name"
                 type="text"
                 placeholder="your name"
                 autoComplete="name"
+                aria-invalid={!!form.formState.errors.name_8403705091}
+                aria-describedby={form.formState.errors.name_8403705091 ? "contact-name-error" : undefined}
                 className="w-full bg-[#1e1e2e] border border-[#45475a] px-3 py-2 text-sm text-[#cdd6f4] placeholder-[#7f849c] focus:border-[#89b4fa]/60 focus:outline-none transition-colors"
                 {...form.register("name_8403705091")}
               />
               {form.formState.errors.name_8403705091 && (
-                <p className="text-xs text-[#f38ba8] mt-1">
+                <p id="contact-name-error" role="alert" className="text-xs text-[#f38ba8] mt-1">
                   {form.formState.errors.name_8403705091.message}
                 </p>
               )}
@@ -103,18 +109,21 @@ export default function Contact() {
 
             {/* Email */}
             <div>
-              <label className="text-xs text-[#a6adc8] block mb-1">
+              <label htmlFor="contact-email" className="text-xs text-[#a6adc8] block mb-1">
                 &gt; Email:
               </label>
               <input
+                id="contact-email"
                 type="email"
                 placeholder="you@example.com"
                 autoComplete="email"
+                aria-invalid={!!form.formState.errors.name_4765427973}
+                aria-describedby={form.formState.errors.name_4765427973 ? "contact-email-error" : undefined}
                 className="w-full bg-[#1e1e2e] border border-[#45475a] px-3 py-2 text-sm text-[#cdd6f4] placeholder-[#7f849c] focus:border-[#89b4fa]/60 focus:outline-none transition-colors"
                 {...form.register("name_4765427973")}
               />
               {form.formState.errors.name_4765427973 && (
-                <p className="text-xs text-[#f38ba8] mt-1">
+                <p id="contact-email-error" role="alert" className="text-xs text-[#f38ba8] mt-1">
                   {form.formState.errors.name_4765427973.message}
                 </p>
               )}
@@ -122,16 +131,19 @@ export default function Contact() {
 
             {/* Message */}
             <div>
-              <label className="text-xs text-[#a6adc8] block mb-1">
+              <label htmlFor="contact-message" className="text-xs text-[#a6adc8] block mb-1">
                 &gt; Message:
               </label>
               <textarea
+                id="contact-message"
                 placeholder="your message..."
+                aria-invalid={!!form.formState.errors.name_2543664404}
+                aria-describedby={form.formState.errors.name_2543664404 ? "contact-message-error" : undefined}
                 className="w-full bg-[#1e1e2e] border border-[#45475a] px-3 py-2 text-sm text-[#cdd6f4] placeholder-[#7f849c] focus:border-[#89b4fa]/60 focus:outline-none transition-colors resize-none h-24"
                 {...form.register("name_2543664404")}
               />
               {form.formState.errors.name_2543664404 && (
-                <p className="text-xs text-[#f38ba8] mt-1">
+                <p id="contact-message-error" role="alert" className="text-xs text-[#f38ba8] mt-1">
                   {form.formState.errors.name_2543664404.message}
                 </p>
               )}
@@ -142,7 +154,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="text-sm text-[#a6e3a1] border border-[#a6e3a1]/30 px-4 py-2 hover:bg-[#a6e3a1]/10 transition-colors disabled:opacity-50"
+              className="text-sm text-[#a6e3a1] border border-[#a6e3a1]/30 px-4 py-2 hover:bg-[#a6e3a1]/10 transition-colors disabled:opacity-50 w-full sm:w-auto"
             >
               {isSubmitting ? "[sending...]" : "[send message]"}
             </button>
@@ -157,8 +169,7 @@ export default function Contact() {
               .
             </p>
           </div>
-        </form>
-      </div>
+      </form>
     </div>
   );
 }

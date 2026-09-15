@@ -14,7 +14,7 @@ body {
 
 @layer base {
   :root {
-    --background: 240 21% 15%;
+    --background: 240 21% 9%;
     --foreground: 226 64% 88%;
     --card: 240 21% 15%;
     --card-foreground: 226 64% 88%;
@@ -49,7 +49,7 @@ body {
     --sidebar-ring: 115 54% 76%;
   }
   .dark {
-    --background: 240 21% 15%;
+    --background: 240 21% 9%;
     --foreground: 226 64% 88%;
     --card: 240 21% 15%;
     --card-foreground: 226 64% 88%;
@@ -119,6 +119,11 @@ body {
 }
 .cursor-blink {
   animation: blink 1s step-end infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink {
+    animation: none;
+  }
 }
 
 /* Glow effect for green text */

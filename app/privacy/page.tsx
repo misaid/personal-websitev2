@@ -2,10 +2,9 @@ import Link from "next/link";
 
 export default function Privacy() {
   return (
-    <div className="max-w-[900px] mx-auto mt-4 px-4">
-      <div className="mb-[100px]">
-        {/* Terminal prompt */}
-        <div className="text-sm text-[#a6adc8] mb-4">
+    <div className="max-w-[900px] mx-auto mt-6 px-4 pb-16">
+      {/* Terminal prompt */}
+      <div className="text-sm text-[#a6adc8] mb-4 select-none" aria-hidden="true">
           <span className="text-[#a6e3a1]">$</span> cat ./privacy.md
           <span className="text-[#a6e3a1] cursor-blink">_</span>
         </div>
@@ -94,7 +93,6 @@ export default function Privacy() {
             </p>
           </div>
         </div>
-      </div>
     </div>
   );
 }

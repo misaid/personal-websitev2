@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
@@ -38,6 +38,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#11111b",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -46,10 +50,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistMono.variable} antialiased min-h-screen flex-col flex flex-grow`}
+        className={`${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-[#1e1e2e] focus:text-[#a6e3a1] focus:border focus:border-[#a6e3a1]/40 focus:px-3 focus:py-2 focus:text-sm"
+        >
+          Skip to content
+        </a>
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main id="main-content" className="flex-grow">{children}</main>
         <Footer />
         <Balloons />
         <Analytics />

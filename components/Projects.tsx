@@ -5,7 +5,7 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="w-full h-full grid grid-cols-1 sm:grid-cols-2 gap-2 "
+      className="w-full h-full grid grid-cols-1 sm:grid-cols-2 gap-3"
     >
       {featuredProjects.map((project) => (
         <ProjectCard key={project.name} {...project} />

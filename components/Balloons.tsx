@@ -1,54 +1,49 @@
 "use client";
 
-import { useEffect } from "react";
-import confetti from "canvas-confetti";
+import { useEffect, useState } from "react";
+import { textBalloons } from "balloons-js";
 
-const BALLOON_COLORS = [
-  "#a6e3a1",
-  "#89b4fa",
-  "#b4befe",
-  "#f9e2af",
-  "#f38ba8",
-  "#f5c2e7",
-  "#94e2d5",
-  "#fab387",
+const VIM_LINES = [
+  { text: "you escaped vim", color: "#a6e3a1", fontSize: 72 },
+  { text: ":q! ... finally", color: "#b4befe", fontSize: 42 },
 ];
 
 export default function Balloons() {
+  const [escaped, setEscaped] = useState(false);
+
   useEffect(() => {
     let buffer = "";
+    let coolingDown = false;
 
     const launchBalloons = () => {
-      const shapes: confetti.Shape[] = [
-        confetti.shapeFromText({ text: "🎈", scalar: 2 }),
-      ];
+      if (coolingDown) return;
+      coolingDown = true;
+      window.setTimeout(() => {
+        coolingDown = false;
+      }, 3000);
 
-      const fire = (x: number) =>
-        confetti({
-          particleCount: 40,
-          angle: 90,
-          spread: 55,
-          startVelocity: 45,
-          gravity: 0.4,
-          drift: 0,
-          decay: 0.93,
-          ticks: 300,
-          origin: { x, y: 0.9 },
-          colors: BALLOON_COLORS,
-          shapes,
-          scalar: 2.2,
-          zIndex: 9999,
-          disableForReducedMotion: true,
-        });
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        setEscaped(true);
+        return;
+      }
 
-      fire(0.1);
-      fire(0.3);
-      fire(0.5);
-      fire(0.7);
-      fire(0.9);
+      const smallScreen = window.innerWidth < 640;
+      textBalloons(
+        VIM_LINES.map((line) => ({
+          ...line,
+          fontSize: smallScreen ? Math.round(line.fontSize * 0.55) : line.fontSize,
+        }))
+      );
+      setEscaped(true);
     };
 
     const onKeyDown = (event: KeyboardEvent) => {
+      // Don't hijack typing inside form fields, which would fire while
+      // a recruiter is writing you a message.
+      const target = event.target as HTMLElement | null;
+      if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) {
+        return;
+      }
       if (!event.key || event.key.length !== 1) return;
       buffer = (buffer + event.key).slice(-3);
       if (buffer === ":q!") {
@@ -61,5 +56,9 @@ export default function Balloons() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  return null;
+  return (
+    <p aria-live="polite" className="sr-only">
+      {escaped ? "You escaped vim. :q! ... finally." : ""}
+    </p>
+  );
 }
