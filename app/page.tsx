@@ -97,8 +97,10 @@ export default function Home(): JSX.Element {
 
         {/* Work Experience / Education Tabs */}
         <div className="mb-4">
-          <div className="flex border border-[#45475a] border-b-0">
+          <div className="flex border border-[#45475a] border-b-0" role="tablist" aria-label="Experience and education">
             <button
+              role="tab"
+              aria-selected={activeTab === "workexp"}
               onClick={() => setActiveTab("workexp")}
               className={`px-4 py-2 text-sm transition-colors ${
                 activeTab === "workexp"
@@ -109,6 +111,8 @@ export default function Home(): JSX.Element {
               [work experience]
             </button>
             <button
+              role="tab"
+              aria-selected={activeTab === "school"}
               onClick={() => setActiveTab("school")}
               className={`px-4 py-2 text-sm transition-colors ${
                 activeTab === "school"

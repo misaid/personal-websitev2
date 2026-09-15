@@ -5,12 +5,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Balloons from "@/components/Balloons";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -50,11 +46,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex-col flex flex-grow`}
+        className={`${geistMono.variable} antialiased min-h-screen flex-col flex flex-grow`}
       >
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <Balloons />
         <Analytics />
         <SpeedInsights />
       </body>
