@@ -65,7 +65,6 @@ export default function Contact() {
       });
 
       if (!response.ok) {
-        toast.error("Failed to submit the form. Please try again.");
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 

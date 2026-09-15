@@ -14,7 +14,7 @@ export default function Footer() {
               <Link
                 href="/privacy"
                 className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
-                  aria-label="Mohamed Said on LinkedIn"
+                  aria-label="Privacy Policy"
                 >
                 privacy
               </Link>
@@ -28,7 +28,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
-                  aria-label="Mohamed Said on GitHub"
+                  aria-label="Mohamed Said on LinkedIn"
                 >
                 <Linkedin />
               </a>
@@ -38,13 +38,14 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
-                  aria-label="Email Mohamed Said"
+                  aria-label="Mohamed Said on GitHub"
                 >
                 <Github />
               </a>
               <a
                 href="mailto:mohamediasaid@outlook.ca"
                 className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
+                aria-label="Email Mohamed Said"
               >
                 <Mail />
               </a>
