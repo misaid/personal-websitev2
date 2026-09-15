@@ -1,56 +1,47 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className="mb-[100px] max-w-[740px] mx-auto justify-center w-full">
-      <div className="flex flex-col space-y-5 mx-5 items-center justify-center">
-        <div className="w-full max-w-[700px] mx-5 py-4 space-y-2.5 rounded-lg mt-5 flex items-center">
-          <div className="w-full">
-            <h4 className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} mohamedsaid.ca |{" "}
-              <Link
-                href="/privacy"
-                className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
-                  aria-label="Privacy Policy"
-                >
-                privacy
-              </Link>
-            </h4>
-          </div>
-
-          <div className="flex w-full justify-end items-center">
-            <div className="flex flex-row space-x-4">
-              <a
-                href="https://www.linkedin.com/in/misaid"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
-                  aria-label="Mohamed Said on LinkedIn"
-                >
-                <Linkedin />
-              </a>
-
-              <a
-                href="https://www.github.com/misaid"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
-                  aria-label="Mohamed Said on GitHub"
-                >
-                <Github />
-              </a>
-              <a
-                href="mailto:mohamediasaid@outlook.ca"
-                className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
-                aria-label="Email Mohamed Said"
-              >
-                <Mail />
-              </a>
-            </div>
-          </div>
+    <div className="w-full border-t border-[#45475a] bg-[#181825] mt-auto">
+      <div className="max-w-[900px] mx-auto flex items-center justify-between px-4 py-2 text-xs">
+        <div className="flex items-center gap-3 text-[#a6adc8]">
+          <span className="text-[#a6e3a1]">--</span>
+          <span>NORMAL</span>
+          <span className="text-[#585b70]">|</span>
+          <span>mohamedsaid.ca</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/privacy"
+            className="text-[#a6adc8] hover:text-[#a6e3a1] transition-colors"
+          >
+            [privacy]
+          </Link>
+          <span className="text-[#585b70]">|</span>
+          <a
+            href="https://www.linkedin.com/in/misaid"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#a6adc8] hover:text-[#a6e3a1] transition-colors"
+          >
+            [linkedin]
+          </a>
+          <a
+            href="https://www.github.com/misaid"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#a6adc8] hover:text-[#a6e3a1] transition-colors"
+          >
+            [github]
+          </a>
+          <a
+            href="mailto:mohamediasaid@outlook.ca"
+            className="text-[#a6adc8] hover:text-[#a6e3a1] transition-colors"
+          >
+            [email]
+          </a>
         </div>
       </div>
     </div>

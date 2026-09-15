@@ -1,25 +1,10 @@
 "use client";
-// External imports
 import React from "react";
 import { toast, Toaster } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import Link from "next/link";
-
-// Internal imports
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  // FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
   name_8403705091: z.string().trim().min(1, "Name is required").max(120, "Name is too long"),
@@ -28,10 +13,6 @@ const formSchema = z.object({
   company: z.string().optional(),
 });
 
-/**
- * The Contact page component
- * @returns {JSX.Element} - The Contact page
- */
 export default function Contact() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -44,18 +25,8 @@ export default function Contact() {
   });
   const { isSubmitting } = form.formState;
 
-  /**
-   * Handles the form submission
-   * @param values - The form values
-   */
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      //console.log(values);
-      // toast(
-      //   <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-      //     <code className="text-white">{JSON.stringify(values, null, 2)}</code>
-      //   </pre>
-      // );
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -69,117 +40,124 @@ export default function Contact() {
       }
 
       await response.json();
-      toast.success("Form submitted successfully!");
+      toast.success("Message sent successfully!");
       form.reset();
     } catch (error) {
       console.error("Form submission error", error);
-      toast.error("Failed to submit the form. Please try again.");
+      toast.error("Failed to send message. Please try again.");
     }
   }
 
   return (
-    <div className="max-w-[740px] mx-auto justify-center mt-24">
-      <Toaster />
-      <div className="mb-[300px] flex flex-col mx-5 space-y-4 justify-center">
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+    <div className="max-w-[900px] mx-auto mt-4 px-4">
+      <Toaster
+        toastOptions={{
+          style: {
+            background: "#1e1e2e",
+            border: "1px solid #45475a",
+            color: "#cdd6f4",
+            fontFamily: "var(--font-geist-mono), monospace",
+          },
+        }}
+      />
+      <div className="mb-[200px]">
+        {/* Terminal prompt */}
+        <div className="text-sm text-[#a6adc8] mb-4">
+          <span className="text-[#a6e3a1]">$</span> ./send-message.sh
+          <span className="text-[#a6e3a1] cursor-blink">_</span>
+        </div>
+
+        <h1 className="text-lg font-bold text-[#b4befe] mb-4">
           Contact Me.
         </h1>
-        <div className="items-center flex space-x-2 w-full">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                {/* Honeypot */}
-                <FormField
-                  control={form.control}
-                  name="company"
-                  render={({ field }) => (
-                    <FormItem className="absolute left-[-9999px]">
-                      <FormControl>
-                        <Input
-                          type="text"
-                          tabIndex={-1}
-                          autoComplete="off"
-                          {...field}
-                        />
-                      </FormControl>
-                    </FormItem>
-                  )}
-                />
 
-                {/* Name */}
-                <div className="col-span-12 md:col-span-6">
-                  <FormField
-                    control={form.control}
-                    name="name_8403705091"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Your name" autoComplete="name" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+          {/* Honeypot */}
+          <input
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            className="absolute left-[-9999px]"
+            {...form.register("company")}
+          />
 
-                {/* Email */}
-                <div className="col-span-12 md:col-span-6">
-                  <FormField
-                    control={form.control}
-                    name="name_4765427973"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input placeholder="you@example.com" type="email" autoComplete="email" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                {/* Message */}
-                <div className="col-span-12">
-                  <FormField
-                    control={form.control}
-                    name="name_2543664404"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="How can I help?"
-                            className="resize-none h-24"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-              </div>
-
-              <div className="mt-4">
-                <Button variant="outline" type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending…" : "Send message"}
-                </Button>
-                <p className="text-xs text-muted-foreground mt-4">
-                  By submitting this form, I agree to the{" "}
-                  <Link
-                    href="/privacy"
-                    className="transition-colors hover:text-foreground/80 text-foreground/60 font-semibold"
-                  >
-                    privacy policy
-                  </Link>
-                  .
+          <div className="space-y-3">
+            {/* Name */}
+            <div>
+              <label className="text-xs text-[#a6adc8] block mb-1">
+                &gt; Name:
+              </label>
+              <input
+                type="text"
+                placeholder="your name"
+                autoComplete="name"
+                className="w-full bg-[#1e1e2e] border border-[#45475a] px-3 py-2 text-sm text-[#cdd6f4] placeholder-[#7f849c] focus:border-[#89b4fa]/60 focus:outline-none transition-colors"
+                {...form.register("name_8403705091")}
+              />
+              {form.formState.errors.name_8403705091 && (
+                <p className="text-xs text-[#f38ba8] mt-1">
+                  {form.formState.errors.name_8403705091.message}
                 </p>
-              </div>
-            </form>
-          </Form>
-        </div>
+              )}
+            </div>
+
+            {/* Email */}
+            <div>
+              <label className="text-xs text-[#a6adc8] block mb-1">
+                &gt; Email:
+              </label>
+              <input
+                type="email"
+                placeholder="you@example.com"
+                autoComplete="email"
+                className="w-full bg-[#1e1e2e] border border-[#45475a] px-3 py-2 text-sm text-[#cdd6f4] placeholder-[#7f849c] focus:border-[#89b4fa]/60 focus:outline-none transition-colors"
+                {...form.register("name_4765427973")}
+              />
+              {form.formState.errors.name_4765427973 && (
+                <p className="text-xs text-[#f38ba8] mt-1">
+                  {form.formState.errors.name_4765427973.message}
+                </p>
+              )}
+            </div>
+
+            {/* Message */}
+            <div>
+              <label className="text-xs text-[#a6adc8] block mb-1">
+                &gt; Message:
+              </label>
+              <textarea
+                placeholder="your message..."
+                className="w-full bg-[#1e1e2e] border border-[#45475a] px-3 py-2 text-sm text-[#cdd6f4] placeholder-[#7f849c] focus:border-[#89b4fa]/60 focus:outline-none transition-colors resize-none h-24"
+                {...form.register("name_2543664404")}
+              />
+              {form.formState.errors.name_2543664404 && (
+                <p className="text-xs text-[#f38ba8] mt-1">
+                  {form.formState.errors.name_2543664404.message}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="text-sm text-[#a6e3a1] border border-[#a6e3a1]/30 px-4 py-2 hover:bg-[#a6e3a1]/10 transition-colors disabled:opacity-50"
+            >
+              {isSubmitting ? "[sending...]" : "[send message]"}
+            </button>
+            <p className="text-xs text-[#9399b2] mt-3">
+              By submitting this form, I agree to the{" "}
+              <Link
+                href="/privacy"
+                className="text-[#a6adc8] hover:text-[#a6e3a1] transition-colors"
+              >
+                [privacy policy]
+              </Link>
+              .
+            </p>
+          </div>
+        </form>
       </div>
     </div>
   );

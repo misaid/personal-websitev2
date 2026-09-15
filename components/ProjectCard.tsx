@@ -1,12 +1,7 @@
 "use client";
-import Tilt from "react-parallax-tilt";
 import React from "react";
-import { Badge } from "@/components/ui/badge";
-import { useRef, useState } from "react";
 import { Github, Globe, Code } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 type Props = {
   image?: string;
@@ -25,89 +20,65 @@ export default function ProjectCard({
   source,
   live,
 }: Props) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-
-  function handleMouseMove(event: React.MouseEvent<HTMLDivElement>) {
-    const rect = ref.current?.getBoundingClientRect();
-    if (rect) {
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      setMousePosition({ x, y });
-    }
-  }
   return (
-    <Tilt scale={1.02} tiltEnable={false} tiltReverse={true} perspective={5000}>
-      <article
-        ref={ref}
-        onMouseMove={handleMouseMove}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="relative h-full w-full shadow-md rounded-lg border flex flex-col p-2 sm:p-4"
-      >
-        <div
-          className="absolute inset-0 z-0 transition-opacity duration-300 ease-in-out rounded-lg w-full h-full"
-          style={{
-            // enable by setting rgba to 0.2
-            background: `radial-gradient(circle 200px at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0), transparent 80%)`,
-            opacity: isHovered ? 1 : 0,
-            pointerEvents: "none",
-          }}
-        />
-        <div className="flex flex-col   space-y-8">
-          <div className="flex flex-col space-y-2 max-h-[300px] h-full">
-            <AspectRatio ratio={16 / 9}>
-              {image ? (
-                <Image
-                  src={image}
-                  alt={name}
-                  width={533}
-                  height={300}
-                  sizes="(max-width: 640px) 100vw, 350px"
-                  className="rounded-lg object-cover w-full h-[170px]"
-                />
-              ) : (
-                <div className="w-full h-full flex justify-center items-center">
-                  <Code size={42} />
-                </div>
-              )}
-            </AspectRatio>
-            <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
-              {name}
-            </h3>
-            <p className="text-sm text-muted-foreground">{description}</p>
-          </div>
-          <div className="flex flex-col space-y-2">
-            <div className="w-full flex flex-row flex-wrap gap-1">
-              {languages.map((language, index) => (
-                <Badge className="text-[10px]" variant={"outline"} key={index}>
-                  {language}
-                </Badge>
-              ))}
-            </div>
-            <div className="flex flex-row w-full space-x-1">
-              {source && (
-                <Button asChild variant="outline">
-                  <a href={source} target="_blank" rel="noopener noreferrer" aria-label={`View ${name} source code`}>
-                    <Github />
-                    Source
-                  </a>
-                </Button>
-              )}
-
-              {live && (
-                <Button asChild variant="outline">
-                  <a href={live} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${name} website`}>
-                    <Globe />
-                    Live site
-                  </a>
-                </Button>
-              )}
-            </div>
-          </div>
+    <article className="border border-[#45475a] bg-[#181825] p-3 flex flex-col h-full">
+      {image ? (
+        <div className="mb-3 border border-[#45475a] overflow-hidden">
+          <Image
+            src={image}
+            alt={name}
+            width={400}
+            height={225}
+            sizes="(max-width: 640px) 100vw, 350px"
+            className="w-full h-[140px] object-cover"
+          />
         </div>
-      </article>
-    </Tilt>
+      ) : (
+        <div className="mb-3 border border-[#45475a] h-[140px] flex items-center justify-center bg-[#313244]">
+          <Code size={32} className="text-[#9399b2]" />
+        </div>
+      )}
+
+      <h3 className="text-sm font-bold text-[#b4befe] mb-1">{name}</h3>
+      <p className="text-xs text-[#a6adc8] mb-3 leading-relaxed flex-grow">
+        {description}
+      </p>
+
+      <div className="flex flex-wrap gap-1 mb-2">
+        {languages.map((lang, index) => (
+          <span
+            key={index}
+            className="text-xs text-[#a6adc8] border border-[#45475a] px-1.5 py-0.5"
+          >
+            {lang}
+          </span>
+        ))}
+      </div>
+
+      <div className="flex gap-2 text-xs">
+        {source && (
+          <a
+            href={source}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-[#a6adc8] hover:text-[#a6e3a1] transition-colors"
+          >
+            <Github size={12} />
+            → source
+          </a>
+        )}
+        {live && (
+          <a
+            href={live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-[#a6adc8] hover:text-[#a6e3a1] transition-colors"
+          >
+            <Globe size={12} />
+            → live
+          </a>
+        )}
+      </div>
+    </article>
   );
 }

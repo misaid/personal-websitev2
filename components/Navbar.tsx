@@ -1,70 +1,49 @@
 "use client";
-// External Imports
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Download } from "lucide-react";
-
-// Internal Imports
-import ModeToggle from "@/components/ModeToggle";
-import { Button } from "@/components/ui/button";
-
-/**
- * The Navbar component is a component that displays the navigation bar.
- * It is composed of a list of links and a mode toggle button.
- * @returns Navbar {JSX.Element} - A JSX element representing the Navbar component.
- */
 
 export default function Navbar(): JSX.Element {
   const pathname = usePathname();
 
+  const links = [
+    { href: "/", label: "home" },
+    { href: "/projects", label: "projects" },
+    { href: "/contact", label: "contact" },
+  ];
+
   return (
-    <div className="w-full flex justify-center">
-      <div className="fixed top-[0px]  z-50 max-w-[740px] w-full flex py-4 backdrop-blur-lg">
-        <div className="w-full flex flex-row mx-5 justify-between items-center">
-          <nav aria-label="Primary navigation" className="flex space-x-5 text-md">
-            <Link
-              href="/"
-              className={`transition-colors hover:text-foreground/80 ${
-                pathname === "/" ? "text-foreground" : "text-foreground/60"
-              } hover:cursor-pointer`}
-            >
-              Home
-            </Link>
-            <Link
-              href="/projects"
-              className={`transition-colors hover:text-foreground/80 ${
-                pathname === "/projects"
-                  ? "text-foreground"
-                  : "text-foreground/60"
-              } hover:cursor-pointer`}
-            >
-              Projects
-            </Link>
-            <Link
-              href="/contact"
-              className={`transition-colors hover:text-foreground/80 ${
-                pathname === "/contact"
-                  ? "text-foreground"
-                  : "text-foreground/60"
-              } hover:cursor-pointer`}
-            >
-              Contact
-            </Link>
-          </nav>
-          <div className="flex items-center gap-1 sm:gap-2">
-            <Button asChild variant="outline" size="sm" className="gap-1.5">
-              <a
-                href="/Mohamed_Said_resume.pdf"
-                download
-                aria-label="Download Mohamed Said's résumé"
+    <div className="w-full border-b border-[#45475a] bg-[#181825]">
+      <div className="max-w-[900px] mx-auto flex items-center justify-between px-4 py-2">
+        <nav aria-label="Primary navigation" className="flex items-center text-sm gap-1">
+          <span className="text-[#a6e3a1] mr-1">$</span>
+          {links.map((link, i) => (
+            <React.Fragment key={link.href}>
+              <Link
+                href={link.href}
+                className={`px-2 py-0.5 transition-colors ${
+                  pathname === link.href
+                    ? "text-[#a6e3a1] text-glow"
+                    : "text-[#a6adc8] hover:text-[#cdd6f4]"
+                }`}
               >
-                <Download className="size-4" aria-hidden="true" />
-                <span className="hidden sm:inline">Resume</span>
-              </a>
-            </Button>
-            <ModeToggle />
-          </div>
+                {link.label}
+              </Link>
+              {i < links.length - 1 && (
+                <span className="text-[#585b70]">|</span>
+              )}
+            </React.Fragment>
+          ))}
+        </nav>
+        <div className="flex items-center gap-3">
+          <a
+            href="/Mohamed_Said_resume.pdf"
+            download
+            aria-label="Download Mohamed Said's résumé"
+            className="text-sm text-[#a6adc8] hover:text-[#a6e3a1] transition-colors"
+          >
+            [download resume]
+          </a>
         </div>
       </div>
     </div>
