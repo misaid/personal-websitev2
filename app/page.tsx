@@ -22,10 +22,10 @@ export const metadata: Metadata = {
 export default function Home(): JSX.Element {
   return (
     <div className="w-full h-full">
-      <div className="max-w-[740px] mx-auto mt-5 justify-center">
+      <div className="max-w-[clamp(740px,38.5vw,1400px)] mx-auto mt-5 justify-center">
         <div className="flex flex-col space-y-5 mx-5 mt-24 items-center justify-center ">
           {/* User Profile */}
-          <section className="w-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border">
+          <section className="w-full mx-5 p-4 shadow-md rounded-lg border">
             <div className="items-center flex flex-col sm:flex-row space-y-4 sm:space-y-0 w-full justify-center">
               <div className="flex sm:mr-4">
                 <Image
@@ -111,7 +111,7 @@ export default function Home(): JSX.Element {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="school">
-              <div className="w-full max-w-[700px] p-4 space-y-2.5 shadow-md rounded-lg border mt-2.5">
+              <div className="w-full p-4 space-y-2.5 shadow-md rounded-lg border mt-2.5">
                 <div className="w-full p-4 h-full rounded-lg flex-row flex space-x-10">
                   <div className="max-w-12 w-full h-full flex flex-row items-center">
                     <Uofa />
@@ -139,7 +139,7 @@ export default function Home(): JSX.Element {
               </div>
             </TabsContent>
             <TabsContent value="workexp">
-              <div className="w-full max-w-[700px] p-4 space-y-2.5 shadow-md rounded-lg border mt-2.5">
+              <div className="w-full p-4 space-y-2.5 shadow-md rounded-lg border mt-2.5">
                 <div className="w-full h-full rounded-lg flex flex-col space-y-4">
                   <div className="border-b pb-4">
                     <p className="text-sm text-muted-foreground">
@@ -210,12 +210,12 @@ export default function Home(): JSX.Element {
           </Tabs>
 
           {/* Languages */}
-          <section className="w-full min-h-[400px] h-full max-w-[700px] mx-5 p-4 shadow-md rounded-lg border mt-5">
+          <section className="w-full min-h-[400px] h-full mx-5 p-4 shadow-md rounded-lg border mt-5">
             <Languages />
           </section>
 
           {/* Projects */}
-          <section className="w-full max-w-[700px] mx-5 p-4 space-y-2.5 shadow-md rounded-lg border mt-5">
+          <section className="w-full mx-5 p-4 space-y-2.5 shadow-md rounded-lg border mt-5">
             <div className="w-full flex flex-row border-b pb-2 items-center">
               <div>
                 <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0">
@@ -230,7 +230,7 @@ export default function Home(): JSX.Element {
                   className="p-2 flex flex-row items-center space-x-1 text-base text-muted-foreground hover:cursor-pointer"
                   href="/projects"
                 >
-                  <h3>See more</h3> <ArrowRight />
+                  <h3>See more</h3> <ArrowRight aria-hidden="true" />
                 </Link>
               </div>
             </div>

@@ -64,7 +64,7 @@ export default function ProjectCard({
                   alt={name}
                   width={533}
                   height={300}
-                  sizes="(max-width: 640px) 100vw, 350px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 2559px) 350px, 450px"
                   className="rounded-lg object-cover w-full h-[170px]"
                 />
               ) : (

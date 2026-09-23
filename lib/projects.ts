@@ -21,13 +21,13 @@ export const projects: Project[] = [
     image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/msb_feed.png",
     languages: ["Python", "Django", "PostgreSQL", "HTML/CSS", "JavaScript", "Docker"],
     name: "Social Distribution",
-    description: "A full-stack, federated social web application inspired by Mastodon, built for a closed-source academic assignment.",
+    description: "A full-stack, federated social web application inspired by Mastodon, built as closed-source university coursework.",
   },
   {
     image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/twitter2.png",
     languages: ["Python", "SQLite"],
     name: "Twitter CLI",
-    description: "A command-line social network clone with posting, following, feeds, and tweet discovery, built for a closed-source academic assignment.",
+    description: "A command-line social network clone with posting, following, feeds, and tweet discovery, built as closed-source university coursework.",
   },
   {
     image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/genshop.png",

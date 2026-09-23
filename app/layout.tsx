@@ -48,8 +48,45 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Mohamed Said",
+    url: "https://mohamedsaid.ca",
+    jobTitle: "Full-Stack Software Developer",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Edmonton",
+      addressRegion: "Alberta",
+      addressCountry: "CA",
+    },
+    sameAs: [
+      "https://www.linkedin.com/in/misaid",
+      "https://www.github.com/misaid",
+    ],
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "University of Alberta",
+    },
+    knowsAbout: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Python",
+      "Java",
+      "PostgreSQL",
+      "Docker",
+    ],
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex-col flex flex-grow`}
       >

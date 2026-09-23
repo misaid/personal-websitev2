@@ -20,7 +20,7 @@ export default function Navbar(): JSX.Element {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="fixed top-[0px]  z-50 max-w-[740px] w-full flex py-4 backdrop-blur-lg">
+      <div className="fixed top-[0px]  z-50 max-w-[clamp(740px,38.5vw,1400px)] w-full flex py-4 backdrop-blur-lg">
         <div className="w-full flex flex-row mx-5 justify-between items-center">
           <nav aria-label="Primary navigation" className="flex space-x-5 text-md">
             <Link

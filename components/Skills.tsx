@@ -140,7 +140,7 @@ export default function Languages(): JSX.Element {
       <div>
         {/* <DiMysql style={{ fontSize: "clamp(24px, 5vw, 80px)" }} /> */}
       </div>
-      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 min-[2560px]:grid-cols-6 gap-2 sm:gap-4">
         {skills.map((skill, index) => (
           <div
             key={index}

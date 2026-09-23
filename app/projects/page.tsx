@@ -15,14 +15,14 @@ export const metadata: Metadata = {
  */
 export default function Projects() {
   return (
-    <div className="max-w-[740px] mx-auto justify-center mt-24">
+    <div className="max-w-[clamp(740px,38.5vw,1400px)] mx-auto justify-center mt-24">
       <div className="flex flex-col space-y-6 justify-center mx-5">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
           My projects.
         </h1>
         <div
           id="projects"
-          className="w-full h-full grid grid-cols-1 sm:grid-cols-2 gap-2 "
+          className="w-full h-full grid grid-cols-1 sm:grid-cols-2 min-[2560px]:grid-cols-3 gap-2 "
         >
           {projects.map((project) => (
             <ProjectCard key={project.name} {...project} />
