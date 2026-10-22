@@ -143,6 +143,42 @@ export default function Home(): JSX.Element {
                 <div className="w-full h-full rounded-lg flex flex-col space-y-4">
                   <div className="border-b pb-4">
                     <p className="text-sm text-muted-foreground">
+                      Jul 2026 – Present
+                    </p>
+                    <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
+                      Software Developer
+                    </h2>
+                    <p className="text-muted-foreground">Freelance · Edmonton, AB</p>
+                    <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+                      <li>
+                        Designed, built, and deployed two production nonprofit
+                        websites for separate clients with a Next.js frontend
+                        and Sanity CMS backend, owning requirements,
+                        implementation, and launch end to end
+                      </li>
+                      <li>
+                        Delivered CMS-driven pages for events, gallery, and
+                        services, including a 36-page site offered in two
+                        languages; both sites scored 99 on Google Lighthouse
+                        for performance, accessibility, and SEO
+                      </li>
+                      <li>
+                        Architecting a school management platform for ~500
+                        students and staff (assignments, attendance, grading,
+                        enrollment, role-based dashboards) in full-stack
+                        TypeScript on PostgreSQL, Prisma, Redis, and Docker
+                      </li>
+                      <li>
+                        Implementing Google Workspace SSO, MFA, and
+                        role-based access for student, teacher, parent, and
+                        admin accounts, working directly with school staff to
+                        turn requirements into features
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="border-b pb-4">
+                    <p className="text-sm text-muted-foreground">
                       Sept 2025 – Present
                     </p>
                     <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
