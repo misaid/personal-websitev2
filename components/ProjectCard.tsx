@@ -55,8 +55,8 @@ export default function ProjectCard({
             pointerEvents: "none",
           }}
         />
-        <div className="flex flex-col   space-y-8">
-          <div className="flex flex-col space-y-2 max-h-[300px] h-full">
+        <div className="relative flex flex-col h-full justify-between space-y-8">
+          <div className="flex flex-col space-y-2">
             <AspectRatio ratio={16 / 9}>
               {image ? (
                 <Image

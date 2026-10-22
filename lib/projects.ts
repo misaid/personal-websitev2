@@ -10,6 +10,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    image: "/projects/hypr-seam.png",
+    languages: ["C++", "Hyprland", "Meson", "Ninja"],
+    name: "hypr-seam",
+    description: "A Hyprland plugin that flattens the corners where tiled windows meet, with per-corner and per-app rounding rules. Detects adjacent windows with a configurable tolerance for gap spacing.",
+    source: "https://github.com/misaid/hypr-seam",
+  },
+  {
     image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/homi.png",
     languages: ["Expo", "React Native", "React Query", "Clerk", "Rails", "PostgreSQL", "Redis", "Supabase Storage"],
     name: "Homi",
