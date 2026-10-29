@@ -3,8 +3,9 @@
 import { useRef, useState } from "react";
 import Tilt from "react-parallax-tilt";
 // languages
+import { TbBrandCSharp } from "react-icons/tb";
 import { FaJava, FaPython } from "react-icons/fa";
-import { SiCplusplus, SiTypescript, SiRuby } from "react-icons/si";
+import { SiCplusplus, SiTypescript } from "react-icons/si";
 // frameworks
 import {
   // SiNodedotjs,
@@ -57,9 +58,9 @@ export default function Languages(): JSX.Element {
       description: "Compiled Language",
     },
     {
-      icon: <SiRuby style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
-      name: "Ruby",
-      description: "Dynamic Language",
+      icon: <TbBrandCSharp style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
+      name: "CSharp",
+      description: "OOP Language",
     },
     // {
     //   icon: <SiDjango style={{ fontSize: "clamp(24px, 5vw, 80px)" }} />,
