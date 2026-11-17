@@ -148,7 +148,9 @@ export default function Home(): JSX.Element {
                     <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
                       Software Developer
                     </h2>
-                    <p className="text-muted-foreground">Freelance · Edmonton, AB</p>
+                    <p className="text-muted-foreground">
+                      Freelance · Edmonton, AB
+                    </p>
                     <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
                       <li>
                         Designed, built, and deployed two production nonprofit
@@ -159,8 +161,8 @@ export default function Home(): JSX.Element {
                       <li>
                         Delivered CMS-driven pages for events, gallery, and
                         services, including a 36-page site offered in two
-                        languages; both sites scored 99 on Google Lighthouse
-                        for performance, accessibility, and SEO
+                        languages; both sites scored 99 on Google Lighthouse for
+                        performance, accessibility, and SEO
                       </li>
                       <li>
                         Architecting a school management platform for ~500
@@ -169,10 +171,10 @@ export default function Home(): JSX.Element {
                         TypeScript on PostgreSQL, Prisma, Redis, and Docker
                       </li>
                       <li>
-                        Implementing Google Workspace SSO, MFA, and
-                        role-based access for student, teacher, parent, and
-                        admin accounts, working directly with school staff to
-                        turn requirements into features
+                        Implementing Google Workspace SSO, MFA, and role-based
+                        access for student, teacher, parent, and admin accounts,
+                        working directly with school staff to turn requirements
+                        into features
                       </li>
                     </ul>
                   </div>

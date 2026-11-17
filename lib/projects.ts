@@ -21,18 +21,66 @@ export interface ProjectImage {
 export const projects: Project[] = [
   {
     image: "/projects/gmk87/01-lighting-rainbow.webp",
-    languages: ["Rust", "Tauri v2", "React", "TypeScript", "Tailwind", "WebGL2"],
+    languages: [
+      "Rust",
+      "Tauri v2",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "WebGL2",
+    ],
     name: "GMK87 Configurator",
-    description: "An open-source desktop app and CLI for the ZUOYA GMK87 mechanical keyboard. It sets the 240×135 display image or GIF, RGB lighting and clock over USB HID, with no vendor software.",
+    description:
+      "An open-source desktop app and CLI for the ZUOYA GMK87 mechanical keyboard. It sets the 240×135 display image or GIF, RGB lighting and clock over USB HID, with no vendor software.",
     images: [
-      { src: "/projects/gmk87/01-lighting-rainbow.webp", width: 1800, height: 1125, alt: "GMK87 Configurator lighting tab previewing a rainbow effect across the keyboard" },
-      { src: "/projects/gmk87/02-lighting-steady-glow.webp", width: 1800, height: 1125, alt: "Lighting tab with a steady glow effect selected" },
-      { src: "/projects/gmk87/03-lighting-draft-mode.webp", width: 1800, height: 1125, alt: "Lighting tab in draft mode with unsaved changes" },
-      { src: "/projects/gmk87/04-light-bar-editor.webp", width: 1800, height: 1125, alt: "Light bar editor for the keyboard's side lighting" },
-      { src: "/projects/gmk87/05-display-slots.webp", width: 1800, height: 1325, alt: "Display slots tab for the keyboard's 240x135 screen" },
-      { src: "/projects/gmk87/06-profiles.webp", width: 1800, height: 1125, alt: "Profiles tab for saving and switching keyboard configurations" },
-      { src: "/projects/gmk87/07-device.webp", width: 1800, height: 1125, alt: "Device tab showing connection and keyboard details" },
-      { src: "/projects/gmk87/10-lighting-compact.webp", width: 1800, height: 1260, alt: "Lighting tab in the compact layout" },
+      {
+        src: "/projects/gmk87/01-lighting-rainbow.webp",
+        width: 1800,
+        height: 1125,
+        alt: "GMK87 Configurator lighting tab previewing a rainbow effect across the keyboard",
+      },
+      {
+        src: "/projects/gmk87/02-lighting-steady-glow.webp",
+        width: 1800,
+        height: 1125,
+        alt: "Lighting tab with a steady glow effect selected",
+      },
+      {
+        src: "/projects/gmk87/03-lighting-draft-mode.webp",
+        width: 1800,
+        height: 1125,
+        alt: "Lighting tab in draft mode with unsaved changes",
+      },
+      {
+        src: "/projects/gmk87/04-light-bar-editor.webp",
+        width: 1800,
+        height: 1125,
+        alt: "Light bar editor for the keyboard's side lighting",
+      },
+      {
+        src: "/projects/gmk87/05-display-slots.webp",
+        width: 1800,
+        height: 1325,
+        alt: "Display slots tab for the keyboard's 240x135 screen",
+      },
+      {
+        src: "/projects/gmk87/06-profiles.webp",
+        width: 1800,
+        height: 1125,
+        alt: "Profiles tab for saving and switching keyboard configurations",
+      },
+      {
+        src: "/projects/gmk87/07-device.webp",
+        width: 1800,
+        height: 1125,
+        alt: "Device tab showing connection and keyboard details",
+      },
+      {
+        src: "/projects/gmk87/10-lighting-compact.webp",
+        width: 1800,
+        height: 1260,
+        alt: "Lighting tab in the compact layout",
+      },
     ],
     highlights: [
       "Reverse-engineered the keyboard's USB HID protocol from packet captures and documented it, including corrections to earlier community notes.",
@@ -48,15 +96,51 @@ export const projects: Project[] = [
     image: "/projects/hypr-seam/06-before-after.webp",
     languages: ["C++", "Hyprland", "Meson", "Ninja"],
     name: "hypr-seam",
-    description: "A Hyprland plugin that flattens the corners where tiled windows meet, with per-corner and per-app rounding rules. Detects adjacent windows with a configurable tolerance for gap spacing.",
+    description:
+      "A Hyprland plugin that flattens the corners where tiled windows meet, with per-corner and per-app rounding rules. Detects adjacent windows with a configurable tolerance for gap spacing.",
     images: [
-      { src: "/projects/hypr-seam/06-before-after.webp", width: 1600, height: 900, alt: "hypr-seam before and after: seam = false on the left, seam = true on the right" },
-      { src: "/projects/hypr-seam/01-seam-on.webp", width: 1600, height: 900, alt: "Tiled windows with the seam effect on, corners flattened where windows meet" },
-      { src: "/projects/hypr-seam/02-seam-off.webp", width: 1600, height: 900, alt: "The same layout with the seam effect off, native rounded corners at every junction" },
-      { src: "/projects/hypr-seam/03-seam-junction-detail.webp", width: 1440, height: 960, alt: "Close-up of a window junction with the seam on" },
-      { src: "/projects/hypr-seam/04-seam-off-junction-detail.webp", width: 1440, height: 960, alt: "Close-up of the same junction with the seam off" },
-      { src: "/projects/hypr-seam/05-per-corner-rounding.webp", width: 1600, height: 900, alt: "Per-corner rounding on tiled windows" },
-      { src: "/projects/hypr-seam/07-config-card.webp", width: 1600, height: 900, alt: "hypr-seam Lua configuration with per-app and per-workspace rules" },
+      {
+        src: "/projects/hypr-seam/06-before-after.webp",
+        width: 1600,
+        height: 900,
+        alt: "hypr-seam before and after: seam = false on the left, seam = true on the right",
+      },
+      {
+        src: "/projects/hypr-seam/01-seam-on.webp",
+        width: 1600,
+        height: 900,
+        alt: "Tiled windows with the seam effect on, corners flattened where windows meet",
+      },
+      {
+        src: "/projects/hypr-seam/02-seam-off.webp",
+        width: 1600,
+        height: 900,
+        alt: "The same layout with the seam effect off, native rounded corners at every junction",
+      },
+      {
+        src: "/projects/hypr-seam/03-seam-junction-detail.webp",
+        width: 1440,
+        height: 960,
+        alt: "Close-up of a window junction with the seam on",
+      },
+      {
+        src: "/projects/hypr-seam/04-seam-off-junction-detail.webp",
+        width: 1440,
+        height: 960,
+        alt: "Close-up of the same junction with the seam off",
+      },
+      {
+        src: "/projects/hypr-seam/05-per-corner-rounding.webp",
+        width: 1600,
+        height: 900,
+        alt: "Per-corner rounding on tiled windows",
+      },
+      {
+        src: "/projects/hypr-seam/07-config-card.webp",
+        width: 1600,
+        height: 900,
+        alt: "hypr-seam Lua configuration with per-app and per-workspace rules",
+      },
     ],
     highlights: [
       "Hooks an internal Hyprland function to replace native corner rendering with a custom seam effect.",
@@ -64,23 +148,84 @@ export const projects: Project[] = [
       "Installable through hyprpm, built with Meson and Ninja.",
     ],
     source: "https://github.com/misaid/hypr-seam",
+    featured: true,
   },
   {
     image: "/projects/homi/cover.webp",
-    languages: ["Expo", "React Native", "React Query", "Clerk", "Rails", "PostgreSQL", "Redis", "Supabase Storage"],
+    languages: [
+      "Expo",
+      "React Native",
+      "React Query",
+      "Clerk",
+      "Rails",
+      "PostgreSQL",
+      "Redis",
+      "Supabase Storage",
+    ],
     name: "Homi",
-    description: "A lightweight, mobile-first property management app for independent landlords and small teams to manage units, tenants, rent, payments, maintenance, and photos.",
+    description:
+      "A lightweight, mobile-first property management app for independent landlords and small teams to manage units, tenants, rent, payments, maintenance, and photos.",
     images: [
-      { src: "/projects/homi/home.webp", width: 600, height: 1333, alt: "Homi home dashboard" },
-      { src: "/projects/homi/rent.webp", width: 600, height: 1333, alt: "Homi rent schedule" },
-      { src: "/projects/homi/tenants.webp", width: 600, height: 1333, alt: "Homi tenants list" },
-      { src: "/projects/homi/tenant-detail.webp", width: 600, height: 1333, alt: "Homi tenant detail" },
-      { src: "/projects/homi/units.webp", width: 600, height: 1333, alt: "Homi units list" },
-      { src: "/projects/homi/unit-detail.webp", width: 600, height: 1333, alt: "Homi unit detail" },
-      { src: "/projects/homi/issue-detail.webp", width: 600, height: 1333, alt: "Homi maintenance issue detail" },
-      { src: "/projects/homi/new-issue.webp", width: 600, height: 1333, alt: "Homi new maintenance issue form" },
-      { src: "/projects/homi/notifications.webp", width: 600, height: 1333, alt: "Homi notifications" },
-      { src: "/projects/homi/settings.webp", width: 600, height: 1333, alt: "Homi settings" },
+      {
+        src: "/projects/homi/home.webp",
+        width: 600,
+        height: 1333,
+        alt: "Homi home dashboard",
+      },
+      {
+        src: "/projects/homi/rent.webp",
+        width: 600,
+        height: 1333,
+        alt: "Homi rent schedule",
+      },
+      {
+        src: "/projects/homi/tenants.webp",
+        width: 600,
+        height: 1333,
+        alt: "Homi tenants list",
+      },
+      {
+        src: "/projects/homi/tenant-detail.webp",
+        width: 600,
+        height: 1333,
+        alt: "Homi tenant detail",
+      },
+      {
+        src: "/projects/homi/units.webp",
+        width: 600,
+        height: 1333,
+        alt: "Homi units list",
+      },
+      {
+        src: "/projects/homi/unit-detail.webp",
+        width: 600,
+        height: 1333,
+        alt: "Homi unit detail",
+      },
+      {
+        src: "/projects/homi/issue-detail.webp",
+        width: 600,
+        height: 1333,
+        alt: "Homi maintenance issue detail",
+      },
+      {
+        src: "/projects/homi/new-issue.webp",
+        width: 600,
+        height: 1333,
+        alt: "Homi new maintenance issue form",
+      },
+      {
+        src: "/projects/homi/notifications.webp",
+        width: 600,
+        height: 1333,
+        alt: "Homi notifications",
+      },
+      {
+        src: "/projects/homi/settings.webp",
+        width: 600,
+        height: 1333,
+        alt: "Homi settings",
+      },
     ],
     highlights: [
       "React Native (Expo) app backed by a Ruby on Rails API, with Clerk JWT auth and per-organization scoping.",
@@ -92,25 +237,55 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/msb_feed.png",
-    languages: ["Python", "Django", "PostgreSQL", "HTML/CSS", "JavaScript", "Docker"],
+    image:
+      "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/msb_feed.png",
+    languages: [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "HTML/CSS",
+      "JavaScript",
+      "Docker",
+    ],
     name: "Social Distribution",
-    description: "A full-stack, federated social web application inspired by Mastodon, built as closed-source university coursework.",
+    description:
+      "A full-stack, federated social web application inspired by Mastodon, built as closed-source university coursework.",
   },
   {
-    image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/twitter2.png",
+    image:
+      "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/twitter2.png",
     languages: ["Python", "SQLite"],
     name: "Twitter CLI",
-    description: "A command-line social network clone with posting, following, feeds, and tweet discovery, built as closed-source university coursework.",
+    description:
+      "A command-line social network clone with posting, following, feeds, and tweet discovery, built as closed-source university coursework.",
   },
   {
-    image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/genshop.png",
-    languages: ["MongoDB", "React.js", "Express.js", "Node.js", "AWS", "Stripe"],
+    image:
+      "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/genshop.png",
+    languages: [
+      "MongoDB",
+      "React.js",
+      "Express.js",
+      "Node.js",
+      "AWS",
+      "Stripe",
+    ],
     name: "GenShop",
-    description: "A full-stack e-commerce platform with secure authentication, Stripe payments, and AI-assisted product generation.",
+    description:
+      "A full-stack e-commerce platform with secure authentication, Stripe payments, and AI-assisted product generation.",
     images: [
-      { src: "/projects/genshop/genshop.webp", width: 1024, height: 576, alt: "GenShop storefront home page" },
-      { src: "/projects/genshop/demo.webp", width: 1894, height: 1020, alt: "GenShop product browsing and checkout demo" },
+      {
+        src: "/projects/genshop/genshop.webp",
+        width: 1024,
+        height: 576,
+        alt: "GenShop storefront home page",
+      },
+      {
+        src: "/projects/genshop/demo.webp",
+        width: 1894,
+        height: 1020,
+        alt: "GenShop product browsing and checkout demo",
+      },
     ],
     highlights: [
       "Search, filter, cart and Stripe checkout, plus AI-generated products reviewed by an admin before listing.",
@@ -125,7 +300,8 @@ export const projects: Project[] = [
     image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/holos.png",
     languages: ["Java", "XML", "Firebase", "Jest", "Figma"],
     name: "Holos",
-    description: "An Android event-management app with real-time notifications, authentication, and QR-code check-in.",
+    description:
+      "An Android event-management app with real-time notifications, authentication, and QR-code check-in.",
     highlights: [
       "Real-time notifications and authentication on Firebase.",
       "QR-code check-in for event attendees.",
@@ -134,10 +310,12 @@ export const projects: Project[] = [
     source: "https://github.com/CMPUT301W24T57/holos-Project",
   },
   {
-    image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/rankanything.png",
+    image:
+      "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/rankanything.png",
     languages: ["MongoDB", "React.js", "Express.js", "Node.js"],
     name: "Rank Anything",
-    description: "A full-stack application for creating, sharing, and voting on dynamically generated lists.",
+    description:
+      "A full-stack application for creating, sharing, and voting on dynamically generated lists.",
     highlights: [
       "Users create rooms with their own item lists and join rooms by name or from a list.",
       "Rankings are computed from the sum of every member's ranking.",
@@ -150,7 +328,8 @@ export const projects: Project[] = [
     image: "https://moprojects.s3.us-east-2.amazonaws.com/portfolio/v1.png",
     languages: ["HTML/CSS", "JavaScript", "PHP", "nginx"],
     name: "Portfolio Website (v1)",
-    description: "The earlier static version of this portfolio, with responsive design and interactive elements.",
+    description:
+      "The earlier static version of this portfolio, with responsive design and interactive elements.",
     source: "https://github.com/misaid/Personal-Website",
   },
 ];
