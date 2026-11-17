@@ -45,12 +45,18 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    image: "/projects/hypr-seam.png",
+    image: "/projects/hypr-seam/06-before-after.webp",
     languages: ["C++", "Hyprland", "Meson", "Ninja"],
     name: "hypr-seam",
     description: "A Hyprland plugin that flattens the corners where tiled windows meet, with per-corner and per-app rounding rules. Detects adjacent windows with a configurable tolerance for gap spacing.",
     images: [
-      { src: "/projects/hypr-seam.png", width: 1280, height: 640, alt: "hypr-seam flattening the corners where tiled Hyprland windows meet" },
+      { src: "/projects/hypr-seam/06-before-after.webp", width: 1600, height: 900, alt: "hypr-seam before and after: seam = false on the left, seam = true on the right" },
+      { src: "/projects/hypr-seam/01-seam-on.webp", width: 1600, height: 900, alt: "Tiled windows with the seam effect on, corners flattened where windows meet" },
+      { src: "/projects/hypr-seam/02-seam-off.webp", width: 1600, height: 900, alt: "The same layout with the seam effect off, native rounded corners at every junction" },
+      { src: "/projects/hypr-seam/03-seam-junction-detail.webp", width: 1440, height: 960, alt: "Close-up of a window junction with the seam on" },
+      { src: "/projects/hypr-seam/04-seam-off-junction-detail.webp", width: 1440, height: 960, alt: "Close-up of the same junction with the seam off" },
+      { src: "/projects/hypr-seam/05-per-corner-rounding.webp", width: 1600, height: 900, alt: "Per-corner rounding on tiled windows" },
+      { src: "/projects/hypr-seam/07-config-card.webp", width: 1600, height: 900, alt: "hypr-seam Lua configuration with per-app and per-workspace rules" },
     ],
     highlights: [
       "Hooks an internal Hyprland function to replace native corner rendering with a custom seam effect.",
