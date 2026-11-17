@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Privacy() {
   return (
-    <div className="max-w-[clamp(740px,38.5vw,1400px)] mx-auto justify-center mt-24">
-      <div className="mb-[100px] flex flex-col mx-5 space-y-4">
+    <div className="site-container mt-24">
+      <div className="mb-[100px] flex flex-col mx-5">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
           Privacy Policy
         </h1>
 
-        <p className="text-sm text-muted-foreground">
+        <p className="mt-3 text-sm text-muted-foreground">
           Last Updated: August 2026
         </p>
 

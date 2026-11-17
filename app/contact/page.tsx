@@ -1,7 +1,7 @@
 "use client";
 // External imports
 import React from "react";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -19,6 +19,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Toaster } from "@/components/ui/sonner";
 import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
@@ -78,11 +79,11 @@ export default function Contact() {
   }
 
   return (
-    <div className="max-w-[clamp(740px,38.5vw,1400px)] mx-auto justify-center mt-24">
+    <div className="site-container mt-24">
       <Toaster />
-      <div className="mb-[300px] flex flex-col mx-5 space-y-4 justify-center">
+      <div className="mb-24 flex flex-col mx-5 space-y-4 justify-center">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          Contact Me.
+          Contact me.
         </h1>
         <div className="items-center flex space-x-2 w-full">
           <Form {...form}>
@@ -163,7 +164,7 @@ export default function Contact() {
               </div>
 
               <div className="mt-4">
-                <Button variant="outline" type="submit" disabled={isSubmitting}>
+                <Button type="submit" disabled={isSubmitting}>
                   {isSubmitting ? "Sending…" : "Send message"}
                 </Button>
                 <p className="text-xs text-muted-foreground mt-4">

@@ -7,6 +7,12 @@ body {
 }
 
 @layer utilities {
+  /* Shared page width: every page, the navbar and the footer use this. */
+  .site-container {
+    width: 100%;
+    margin-inline: auto;
+    max-width: clamp(740px, 38.5vw, 1400px);
+  }
   .text-balance {
     text-wrap: balance;
   }
@@ -94,5 +100,16 @@ body {
 
   :focus-visible {
     @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

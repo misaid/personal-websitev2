@@ -1,15 +1,14 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className="mb-[100px] max-w-[clamp(740px,38.5vw,1400px)] mx-auto justify-center w-full">
+    <div className="site-container mb-[100px]">
       <div className="flex flex-col space-y-5 mx-5 items-center justify-center">
         <div className="w-full mx-5 py-4 space-y-2.5 rounded-lg mt-5 flex items-center">
           <div className="w-full">
-            <h4 className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} mohamedsaid.ca |{" "}
               <Link
                 href="/privacy"
@@ -18,7 +17,7 @@ export default function Footer() {
                 >
                 privacy
               </Link>
-            </h4>
+            </p>
           </div>
 
           <div className="flex w-full justify-end items-center">
@@ -43,7 +42,7 @@ export default function Footer() {
                 <Github />
               </a>
               <a
-                href="mailto:mohamediasaid@outlook.ca"
+                href="mailto:mohamediasaid@outlook.com"
                 className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
                 aria-label="Email Mohamed Said"
               >

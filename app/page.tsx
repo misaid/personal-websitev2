@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function Home(): JSX.Element {
   return (
     <div className="w-full h-full">
-      <div className="max-w-[clamp(740px,38.5vw,1400px)] mx-auto mt-5 justify-center">
+      <div className="site-container mt-5">
         <div className="flex flex-col space-y-5 mx-5 mt-24 items-center justify-center ">
           {/* User Profile */}
           <section className="w-full mx-5 p-4 shadow-md rounded-lg border">
@@ -69,7 +69,7 @@ export default function Home(): JSX.Element {
                     <Github />
                   </a>
                   <a
-                    href="mailto:mohamediasaid@outlook.ca"
+                    href="mailto:mohamediasaid@outlook.com"
                     aria-label="Email Mohamed Said"
                     className="transition-colors hover:text-foreground/80 text-foreground/60 hover:cursor-pointer font-semibold"
                   >
@@ -79,7 +79,7 @@ export default function Home(): JSX.Element {
               </div>
             </div>
 
-            <div className="mt-5 flex flex-col space-y-4 border-t pt-5">
+            <div className="mt-5 flex flex-col border-t pt-5">
               <h2 className="scroll-m-20  pb-2 text-3xl font-semibold tracking-tight first:mt-0">
                 I build secure, scalable software. <span>👋</span>
               </h2>
@@ -89,7 +89,7 @@ export default function Home(): JSX.Element {
                 and deployment, with experience in AI evaluation and secure
                 software development.
               </p>
-              <div className="flex flex-wrap gap-3 pt-1">
+              <div className="mt-5 flex flex-wrap gap-3">
                 <Button asChild>
                   <Link href="/projects">View projects</Link>
                 </Button>
